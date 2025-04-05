@@ -11,12 +11,14 @@ namespace BarSystem
 
         private void Awake()
         {
+            //DontDestroyOnLoad(this);
             Order = _orderGeneration.Generate();
+        }
 
-            foreach(OrderTypeSlot v in Order)
-            {
-                Debug.Log($"{v.OrderType}, {v.Count}");
-            }
+        public void RegenerateOrders()
+        {
+            Instantiate(gameObject);
+            Destroy(gameObject);
         }
     }
 }

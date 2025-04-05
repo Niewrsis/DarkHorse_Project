@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace BarSystem
@@ -24,11 +23,11 @@ namespace BarSystem
                     if (attempts > maxAttempts)
                     {
                         Debug.LogWarning("Не удалось создать уникальный заказ после " + maxAttempts + " попыток.  Пропускаем.");
-                        break; // Прекращаем попытки
+                        break;
                     }
                 } while (isOrderRepeated(newOrder));
 
-                if (attempts <= maxAttempts) // Добавляем только если успешно сгенерировали
+                if (attempts <= maxAttempts)
                     _order.Add(newOrder);
             }
             return _order;
