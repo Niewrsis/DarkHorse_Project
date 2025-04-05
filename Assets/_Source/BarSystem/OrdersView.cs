@@ -1,3 +1,4 @@
+using Core;
 using System;
 using TMPro;
 using UnityEngine;
@@ -9,10 +10,35 @@ namespace BarSystem
         [SerializeField] private Transform gridGroupObj;
         [SerializeField] private GameObject textToClone;
 
+        [SerializeField] private GameObject orderObj;
+
         private CurrentOrder _currentOrder;
+
+        public EventManager EventHandler = new();
 
         private void Start()
         {
+            Instantiate(orderObj);
+
+            _currentOrder = FindFirstObjectByType<CurrentOrder>();
+
+            DrawOrders();
+        }
+        private void OnEnable()
+        {
+            EventHandler.OnComplete += RemoveOrders;
+        }
+        private void OnDisable()
+        {
+            EventHandler.OnComplete -= RemoveOrders;
+        }
+        private void RemoveOrders()
+        {
+            foreach (Transform child in gridGroupObj.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
             _currentOrder = FindFirstObjectByType<CurrentOrder>();
 
             DrawOrders();
