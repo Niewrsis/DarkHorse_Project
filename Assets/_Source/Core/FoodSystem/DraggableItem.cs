@@ -8,7 +8,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private CanvasGroup _canvasGroup;
     private Vector3 _startPosition;
 
-    public string foodName;
+    public string foodName; // Название продукта (например, "Курица")
 
     void Awake()
     {
@@ -20,7 +20,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnBeginDrag(PointerEventData eventData)
     {
         _canvasGroup.alpha = 0.6f;
-        _canvasGroup.blocksRaycasts = false; // Чтобы не блокировать Raycast для Plate
+        _canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -32,6 +32,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _canvasGroup.alpha = 1f;
         _canvasGroup.blocksRaycasts = true;
+
+        // Возвращаем объект на начальную позицию
         _rectTransform.position = _startPosition;
     }
 }
