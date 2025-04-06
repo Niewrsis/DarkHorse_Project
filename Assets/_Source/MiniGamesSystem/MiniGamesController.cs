@@ -16,7 +16,7 @@ namespace MiniGamesSystem
             MiniGameResult.IsSuccess = isSuccess;
 
             // 2. Загружаем основную сцену
-            SceneManager.LoadScene("BarScene"); // Replace "BarScene" with your main scene name
+            SceneManager.LoadScene(0); // Replace "BarScene" with your main scene name
         }
     }
 }

@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 340341896}
   - component: {fileID: 340341894}
   - component: {fileID: 340341895}
+  - component: {fileID: 340341897}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -201,6 +202,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4b78ddaa7eace294e88ebcb9c767cca4, type: 2}
   - {fileID: 11400000, guid: 26eead7ee3df6ad4eb2c3487e1f665cc, type: 2}
   - {fileID: 11400000, guid: 10beaa709ae94864fad5a45138768e3d, type: 2}
+--- !u!114 &340341897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340341892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44015a56df0d4249b46d00d064e65a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cocktailButton: {fileID: 448721255}
+  beerButton: {fileID: 1970202983}
+  saladButton: {fileID: 1601244233}
 --- !u!1 &448721253
 GameObject:
   m_ObjectHideFlags: 0

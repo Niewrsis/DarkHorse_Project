@@ -8,6 +8,6 @@ namespace BarSystem
         public OrderType OrderType; // Enum OrderType, определенный ранее
         public string FoodName;
         public Sprite Icon;
-        public GameObject MiniGameScene; // —сылка на сцену мини-игры
+        public int MiniGameScene; // —сылка на сцену мини-игры
     }
 }

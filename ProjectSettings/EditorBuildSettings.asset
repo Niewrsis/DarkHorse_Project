@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Presentation/Scenes/BarScreen.unity
+    guid: f5bdb5cf4fb217946bedca2b33f788b8
+  - enabled: 1
+    path: Assets/_Presentation/Scenes/FoodSelection.unity
+    guid: a321d9d44132c3c43b09dd8a098c0857
+  - enabled: 1
     path: Assets/_Presentation/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
