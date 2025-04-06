@@ -7,20 +7,24 @@ namespace BeerSystem
     {
         public Image image1;
         public Image image2;
-        public GameObject sprite1;
-        public GameObject sprite2;
+        public GameObject sprite1; // Для отображения победного состояния
+        public GameObject sprite2; // Для отображения обычного состояния
         public Button victoryButton;
-        public Button CompletionButton;
+        public Button completionButton;
 
         private float fillSpeed1 = 1f;
         private float fillSpeed2 = 10f;
         private bool isFilling1 = false;
         private bool isFilling2 = false;
 
+        private float minFillAmount;
+        private float maxFillAmount;
+
         private void Start()
         {
             victoryButton.gameObject.SetActive(false);
-            CompletionButton.onClick.AddListener(OnCompletionButtonClick);
+            completionButton.onClick.AddListener(OnCompletionButtonClick);
+            SetRandomRange(); // Устанавливаем случайный диапазон
         }
 
         private void Update()
@@ -52,7 +56,6 @@ namespace BeerSystem
 
         public void OnCompletionButtonClick()
         {
-            // Начинаем заполнение, если кнопка нажата
             if (!isFilling1)
             {
                 isFilling1 = true;
@@ -60,7 +63,6 @@ namespace BeerSystem
             }
             else
             {
-                // Если кнопка была нажата повторно, останавливаем заполнение
                 isFilling1 = false;
                 image1.fillAmount = 0;
                 isFilling2 = false;
@@ -69,7 +71,6 @@ namespace BeerSystem
 
         public void OnPointerDown()
         {
-            // Начинаем заполнение при удерживании кнопки
             if (!isFilling1)
             {
                 isFilling1 = true;
@@ -79,7 +80,6 @@ namespace BeerSystem
 
         public void OnPointerUp()
         {
-            // Останавливаем заполнение при отпускании кнопки
             isFilling1 = false;
             image1.fillAmount = 0;
             isFilling2 = false;
@@ -87,21 +87,14 @@ namespace BeerSystem
 
         private void UpdateSprites()
         {
-            if (image2.fillAmount >= 0.78560f && image2.fillAmount <= 0.88782f)
-            {
-                sprite1.SetActive(true);
-                sprite2.SetActive(false);
-            }
-            else
-            {
-                sprite1.SetActive(false);
-                sprite2.SetActive(true);
-            }
+            // Убираем индикатор, добавляем новый для минимума и максимума
+            sprite1.SetActive(image2.fillAmount >= minFillAmount && image2.fillAmount <= maxFillAmount);
+            sprite2.SetActive(image2.fillAmount < minFillAmount || image2.fillAmount > maxFillAmount);
         }
 
         private void CheckVictoryCondition()
         {
-            if (image2.fillAmount >= 0.78560f && image2.fillAmount <= 0.88782f)
+            if (image2.fillAmount >= minFillAmount && image2.fillAmount <= maxFillAmount)
             {
                 victoryButton.gameObject.SetActive(true);
             }
@@ -109,6 +102,21 @@ namespace BeerSystem
             {
                 victoryButton.gameObject.SetActive(false);
             }
+        }
+
+        private void SetRandomRange()
+        {
+            // Определяем случайный диапазон
+            float[][] ranges = {
+                new float[] { 0.78560f, 0.88782f },
+                new float[] { 0.211f, 0.301f },
+                new float[] { 0.52f, 0.641f },
+                new float[] { 0.926f, 1f }
+            };
+
+            int randomIndex = Random.Range(0, ranges.Length);
+            minFillAmount = ranges[randomIndex][0];
+            maxFillAmount = ranges[randomIndex][1];
         }
     }
 }

@@ -18,7 +18,7 @@ namespace CocktailSystem
 
         void SetRandomCocktail()
         {
-            string[] cocktails = { "Panpanos", "Normisiano", "Surprise from the Depths", "-40 Degrees Fahrenheit" };
+            string[] cocktails = { "TORPEDO", "HOWARD PHILLIPS", "LONELY RAG-A-MUFFIN", "FLAPPER'S DELIGHT" };
             currentCocktail = cocktails[Random.Range(0, cocktails.Length)];
             cocktailNameText.text = currentCocktail;
         }
