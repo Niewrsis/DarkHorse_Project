@@ -1,8 +1,11 @@
 using System;
 
-[Serializable] 
-public class FoodGoal
+namespace FoodSelection
 {
-    public string foodName; 
-    public int requiredAmount; 
+    [Serializable]
+    public class FoodGoal
+    {
+        public string foodName;
+        public int requiredAmount;
+    }
 }
