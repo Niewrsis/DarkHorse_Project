@@ -10,11 +10,11 @@ public class DrinkMixer : MonoBehaviour
     public Button iceButton;
     public Button mixButton;
 
-    public GameObject panpanosSprite; // Объект для Панпанос
-    public GameObject normisianoSprite; // Объект для Нормисианно
-    public GameObject surpriseSprite; // Объект для Сюрприз из глубин
-    public GameObject minus40Sprite; // Объект для -40 градусов по фарингейту
-    public GameObject wrongCombinationSprite; // Объект для неправильной комбинации
+    public GameObject panpanosSprite;
+    public GameObject normisianoSprite;
+    public GameObject surpriseSprite;
+    public GameObject minus40Sprite;
+    public GameObject wrongCombinationSprite;
 
     private List<string> ingredients = new List<string>();
 
@@ -37,7 +37,7 @@ public class DrinkMixer : MonoBehaviour
     {
         string result = CheckRecipe(ingredients);
         ShowResult(result);
-        ingredients.Clear(); // Сбрасываем ингредиенты после смешивания
+        ingredients.Clear();
     }
 
     string CheckRecipe(List<string> ingredients)
@@ -66,14 +66,12 @@ public class DrinkMixer : MonoBehaviour
 
     void ShowResult(string result)
     {
-        // Скрываем все спрайты
         panpanosSprite.SetActive(false);
         normisianoSprite.SetActive(false);
         surpriseSprite.SetActive(false);
         minus40Sprite.SetActive(false);
         wrongCombinationSprite.SetActive(false);
 
-        // Показываем нужный спрайт
         switch (result)
         {
             case "Panpanos":
