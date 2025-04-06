@@ -7,10 +7,11 @@ namespace BeerSystem
     {
         public Image image1;
         public Image image2;
-        public GameObject sprite1; // Для отображения победного состояния
-        public GameObject sprite2; // Для отображения обычного состояния
+        public GameObject sprite1;
+        public GameObject sprite2;
         public Button victoryButton;
         public Button completionButton;
+        public Button resetButton; // Новая кнопка для сброса прогресса
 
         private float fillSpeed1 = 1f;
         private float fillSpeed2 = 10f;
@@ -24,7 +25,8 @@ namespace BeerSystem
         {
             victoryButton.gameObject.SetActive(false);
             completionButton.onClick.AddListener(OnCompletionButtonClick);
-            SetRandomRange(); // Устанавливаем случайный диапазон
+            resetButton.onClick.AddListener(OnResetButtonClick); // Добавляем слушатель для новой кнопки
+            SetRandomRange();
         }
 
         private void Update()
@@ -85,9 +87,16 @@ namespace BeerSystem
             isFilling2 = false;
         }
 
+        private void OnResetButtonClick()
+        {
+            // Сбрасываем прогресс изображения 2
+            image2.fillAmount = 0;
+            isFilling2 = false; // Останавливаем заполнение
+            victoryButton.gameObject.SetActive(false); // Скрываем кнопку победы
+        }
+
         private void UpdateSprites()
         {
-            // Убираем индикатор, добавляем новый для минимума и максимума
             sprite1.SetActive(image2.fillAmount >= minFillAmount && image2.fillAmount <= maxFillAmount);
             sprite2.SetActive(image2.fillAmount < minFillAmount || image2.fillAmount > maxFillAmount);
         }
@@ -106,7 +115,6 @@ namespace BeerSystem
 
         private void SetRandomRange()
         {
-            // Определяем случайный диапазон
             float[][] ranges = {
                 new float[] { 0.78560f, 0.88782f },
                 new float[] { 0.211f, 0.301f },
