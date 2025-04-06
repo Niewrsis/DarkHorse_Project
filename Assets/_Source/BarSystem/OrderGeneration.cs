@@ -5,11 +5,16 @@ namespace BarSystem
 {
     public class OrderGeneration
     {
-        private List<OrderTypeSlot> _order = new List<OrderTypeSlot>();
+        public List<FoodTypeDataSO> AvailableFoodTypes; // Ссылка на список Scriptable Objects
+
+        private readonly List<OrderTypeSlot> _order = new List<OrderTypeSlot>();
+        private readonly System.Random _rnd = new System.Random();
+
         public List<OrderTypeSlot> Generate()
         {
-            System.Random rnd = new System.Random();
-            int orderCount = rnd.Next(1, 4);
+            _order.Clear();
+
+            int orderCount = _rnd.Next(1, 4);
             int maxAttempts = 10;
 
             for (int i = 0; i < orderCount; i++)
@@ -35,15 +40,15 @@ namespace BarSystem
 
         private OrderTypeSlot GenerateSlot()
         {
-            System.Random rnd = new System.Random();
-            OrderType orderType = (OrderType)rnd.Next(0, 3);
-            int orderAmount = rnd.Next(1, 3);
+            FoodTypeDataSO foodTypeData = AvailableFoodTypes[_rnd.Next(0, AvailableFoodTypes.Count)];
+            int orderAmount = _rnd.Next(1, 3);
 
             OrderTypeSlot slot = new OrderTypeSlot();
-            slot.OrderType = orderType;
+            slot.OrderType = foodTypeData.OrderType;
             slot.Count = orderAmount;
             return slot;
         }
+
         private bool isOrderRepeated(OrderTypeSlot newOrder)
         {
             foreach (OrderTypeSlot v in _order)

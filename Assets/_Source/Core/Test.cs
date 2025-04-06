@@ -19,7 +19,7 @@ public class Test : MonoBehaviour
 
     private void Test1()
     {
-        _ordersView.EventHandler.OnComplete?.Invoke();
+        //_ordersView.EventHandler.OnComplete?.Invoke();
     }
 
 }

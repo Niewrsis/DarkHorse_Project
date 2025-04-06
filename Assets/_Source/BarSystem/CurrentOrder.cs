@@ -1,36 +1,25 @@
-﻿using Core;
+﻿using BarSystem;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace BarSystem
+public class CurrentOrder : MonoBehaviour
 {
-    public class CurrentOrder : MonoBehaviour
+    public List<OrderTypeSlot> Order { get; private set; }
+
+    private IOrderService _orderService;
+
+    public UnityEvent OnOrderChanged;
+
+    public void Initialize(IOrderService orderService)
     {
-        public List<OrderTypeSlot> Order;
+        _orderService = orderService;
+        GenerateNewOrder();
+    }
 
-        private OrderGeneration _orderGeneration = new();
-
-        private OrdersView _eventManager;
-
-        private void Awake()
-        {
-            _eventManager = FindFirstObjectByType<OrdersView>();
-
-            DontDestroyOnLoad(this);
-            Order = _orderGeneration.Generate();
-
-            _eventManager.EventHandler.OnComplete += RegenerateOrders;
-        }
-
-        public void RegenerateOrders()
-        {
-            GameObject obj = Instantiate(gameObject);
-            obj.name = "Orders";
-            Destroy(gameObject);
-        }
-        private void OnDestroy()
-        {
-            _eventManager.EventHandler.OnComplete -= RegenerateOrders;
-        }
+    public void GenerateNewOrder()
+    {
+        Order = _orderService.GenerateNewOrder();
+        OnOrderChanged?.Invoke();
     }
 }

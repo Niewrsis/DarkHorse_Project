@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &167116609
+--- !u!1 &340341892
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,37 +127,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 167116610}
-  - component: {fileID: 167116612}
+  - component: {fileID: 340341893}
+  - component: {fileID: 340341896}
+  - component: {fileID: 340341894}
+  - component: {fileID: 340341895}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &167116610
+--- !u!4 &340341893
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167116609}
+  m_GameObject: {fileID: 340341892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.48676986, y: -0.4908771, z: 3.2764013}
+  m_LocalPosition: {x: 0.6730875, y: -2.0636408, z: -10.018893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &167116612
+--- !u!114 &340341894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167116609}
+  m_GameObject: {fileID: 340341892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bd309dccd065b4ca86ef4b891b1b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnOrderChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &340341895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340341892}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b50c04bc389599b4d82bf521b44ad179, type: 3}
@@ -165,7 +182,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridGroupObj: {fileID: 522299250}
   textToClone: {fileID: 7321883481087030608, guid: 56794a9937410744bb08a3d24a9bcc45, type: 3}
-  orderObj: {fileID: 2897794028496068007, guid: 4417b5f0b8edd374491f42a0946d2df4, type: 3}
+  currentOrder: {fileID: 340341894}
+--- !u!114 &340341896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340341892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23f421751d7172458be09fd94f19987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentOrder: {fileID: 340341894}
+  ordersView: {fileID: 340341895}
+  AvailableFoodTypes:
+  - {fileID: 11400000, guid: 4b78ddaa7eace294e88ebcb9c767cca4, type: 2}
+  - {fileID: 11400000, guid: 26eead7ee3df6ad4eb2c3487e1f665cc, type: 2}
+  - {fileID: 11400000, guid: 10beaa709ae94864fad5a45138768e3d, type: 2}
 --- !u!1 &448721253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1058,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 167116610}
+  - {fileID: 340341893}
   - {fileID: 1565919944}
   - {fileID: 1429146821}
   - {fileID: 1125342456}

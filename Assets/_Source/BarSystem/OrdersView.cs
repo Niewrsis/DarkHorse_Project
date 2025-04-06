@@ -1,54 +1,61 @@
-using Core;
 using System;
 using TMPro;
 using UnityEngine;
 
 namespace BarSystem
 {
+
     public class OrdersView : MonoBehaviour
     {
         [SerializeField] private Transform gridGroupObj;
         [SerializeField] private GameObject textToClone;
 
-        [SerializeField] private GameObject orderObj;
+        // —сылка на CurrentOrder, чтобы подписатьс€ на событие OnOrderChanged
+        [SerializeField] private CurrentOrder currentOrder;
 
-        private CurrentOrder _currentOrder;
-
-        public EventManager EventHandler = new();
-
-        private void Start()
-        {
-            Instantiate(orderObj);
-
-            _currentOrder = FindFirstObjectByType<CurrentOrder>();
-
-            DrawOrders();
-        }
         private void OnEnable()
         {
-            EventHandler.OnComplete += RemoveOrders;
+            if (currentOrder != null)
+            {
+                currentOrder.OnOrderChanged.AddListener(UpdateOrderDisplay);
+            }
+            else
+            {
+                Debug.LogError("CurrentOrder is not assigned in OrdersView!");
+            }
         }
+
         private void OnDisable()
         {
-            EventHandler.OnComplete -= RemoveOrders;
+            if (currentOrder != null)
+            {
+                currentOrder.OnOrderChanged.RemoveListener(UpdateOrderDisplay);
+            }
         }
-        private void RemoveOrders()
+
+        private void ClearOrderDisplay()
         {
             foreach (Transform child in gridGroupObj.transform)
             {
                 Destroy(child.gameObject);
             }
-
-            _currentOrder = FindFirstObjectByType<CurrentOrder>();
-
-            DrawOrders();
         }
-        private void DrawOrders()
+
+        // UpdateOrderDisplay принимает List<OrderTypeSlot> напр€мую.
+        public void UpdateOrderDisplay()
         {
-            for(int i = 0; _currentOrder.Order.Count > i; i++)
+            if (currentOrder == null || currentOrder.Order == null)
+            {
+                Debug.LogError("CurrentOrder is null or Order list is null!");
+                return;
+            }
+
+            ClearOrderDisplay();
+
+            foreach (var order in currentOrder.Order)
             {
                 GameObject text = Instantiate(textToClone, gridGroupObj);
-                text.GetComponent<TextMeshProUGUI>().text = $"{_currentOrder.Order[i].Count}x {Enum.GetName(typeof(OrderType), _currentOrder.Order[i].OrderType)}";
+                text.GetComponent<TextMeshProUGUI>().text = $"{order.Count}x {Enum.GetName(typeof(OrderType), order.OrderType)}";
             }
         }
     }
