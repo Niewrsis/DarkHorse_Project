@@ -26,7 +26,7 @@ namespace BarSystem
         }
         private void SaladButton()
         {
-            SceneChanger.ChangeScene(1);
+            SceneChanger.ChangeScene(3);
         }
     }
 }
