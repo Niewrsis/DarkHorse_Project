@@ -13,7 +13,7 @@ namespace BarSystem
 
         public List<OrderTypeSlot> GenerateNewOrder()
         {
-            return _orderGeneration.Generate();
+            return _orderGeneration.GenerateNewOrder();
         }
     }
 }

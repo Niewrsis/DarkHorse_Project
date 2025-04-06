@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -6,77 +7,43 @@ namespace BarSystem
 {
     public class OrdersView : MonoBehaviour
     {
-        [SerializeField] private Transform gridGroupObj;
-        [SerializeField] private GameObject textToClone;
+        public CurrentOrder currentOrder;
+        public GameObject orderItemPrefab;
+        public Transform orderContainer;
 
-        [SerializeField] private CurrentOrder currentOrder;
+        private List<GameObject> orderItems = new List<GameObject>();
 
-        private void OnEnable()
+        public void UpdateUI()
         {
-            if (currentOrder != null)
-            {
-                currentOrder.OnOrderChanged.AddListener(UpdateOrderDisplay);
-            }
-            else
-            {
-                Debug.LogError("CurrentOrder is not assigned in OrdersView!");
-            }
-        }
-
-        private void OnDisable()
-        {
-            if (currentOrder != null)
-            {
-                currentOrder.OnOrderChanged.RemoveListener(UpdateOrderDisplay);
-            }
-        }
-
-        private void ClearOrderDisplay()
-        {
-            foreach (Transform child in gridGroupObj.transform)
+            foreach (Transform child in orderContainer)
             {
                 Destroy(child.gameObject);
             }
-        }
+            orderItems.Clear();
 
-        public void UpdateOrderDisplay()
-        {
-            if (currentOrder == null || currentOrder.Order == null)
+            if (currentOrder != null && currentOrder.Order != null)
             {
-                Debug.LogError("CurrentOrder is null or Order list is null!");
-                return;
-            }
-
-            DrawOrders();
-        }
-
-        private void DrawOrders()
-        {
-            if (currentOrder == null || currentOrder.Order == null)
-            {
-                Debug.LogError("CurrentOrder is null or Order list is null!");
-                return;
-            }
-
-            ClearOrderDisplay();
-
-            foreach (var order in currentOrder.Order)
-            {
-                GameObject text = Instantiate(textToClone, gridGroupObj);
-                TextMeshProUGUI tmp = text.GetComponent<TextMeshProUGUI>();
-
-                // Show remaining count
-                int remaining = order.Count - order.CompletedCount;
-                tmp.text = $"{remaining}x {Enum.GetName(typeof(OrderType), order.OrderType)}";
-
-                if (order.IsCompleted)
+                foreach (var slot in currentOrder.Order)
                 {
-                    tmp.fontStyle = FontStyles.Strikethrough;
+                    Debug.Log($"OrderType: {slot.OrderType}, Count: {slot.Count}, CompletedCount: 0");
+
+                    GameObject orderItem = Instantiate(orderItemPrefab, orderContainer);
+                    orderItems.Add(orderItem);
+
+                    TextMeshProUGUI orderTypeText = orderItem.GetComponentInChildren<TextMeshProUGUI>();
+
+
+                    orderTypeText.rectTransform.sizeDelta = new Vector2(200, 50); // Установите ширину и высоту
+                    orderTypeText.rectTransform.anchoredPosition = Vector2.zero; // Установите позицию
+                    orderTypeText.fontSize = 36;
+                    orderTypeText.color = Color.black;
+                    // Set the text
+                    orderTypeText.text = $"{slot.OrderType}: {slot.Count}";
                 }
-                else
-                {
-                    tmp.fontStyle = FontStyles.Normal;
-                }
+            }
+            else
+            {
+                Debug.Log("currentOrder is null or currentOrder.Order is null");
             }
         }
     }
