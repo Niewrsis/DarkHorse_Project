@@ -16,6 +16,8 @@ public class DrinkMixer : MonoBehaviour
     public GameObject minus40Sprite;
     public GameObject wrongCombinationSprite;
 
+    public WinChecker winChecker;
+
     private List<string> ingredients = new List<string>();
 
     void Start()
@@ -37,6 +39,7 @@ public class DrinkMixer : MonoBehaviour
     {
         string result = CheckRecipe(ingredients);
         ShowResult(result);
+        winChecker.CheckWin(result);
         ingredients.Clear();
     }
 
