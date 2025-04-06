@@ -468,6 +468,7 @@ MonoBehaviour:
   sprite1: {fileID: 1100035402}
   sprite2: {fileID: 1816067284}
   victoryButton: {fileID: 1902105535}
+  CompletionButton: {fileID: 754846602}
 --- !u!114 &526983998
 MonoBehaviour:
   m_ObjectHideFlags: 0
