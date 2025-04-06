@@ -1,4 +1,5 @@
 using BarSystem;
+using MiniGamesSystem;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,13 +15,20 @@ namespace Core
         void Start()
         {
             OrderGeneration orderGeneration = new OrderGeneration();
-
             orderGeneration.AvailableFoodTypes = AvailableFoodTypes;
 
             OrderService orderService = new OrderService(orderGeneration);
             currentOrder.Initialize(orderService);
 
-            ordersView.UpdateOrderDisplay();
+            if (MiniGameResult.CompletedOrderType != OrderType.None)
+            {
+                if (MiniGameResult.IsSuccess)
+                {
+                    currentOrder.CompleteOrder(MiniGameResult.CompletedOrderType);
+                }
+                MiniGameResult.CompletedOrderType = OrderType.None;
+                MiniGameResult.IsSuccess = false;
+            }
         }
     }
 }

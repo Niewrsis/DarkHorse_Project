@@ -4,13 +4,11 @@ using UnityEngine;
 
 namespace BarSystem
 {
-
     public class OrdersView : MonoBehaviour
     {
         [SerializeField] private Transform gridGroupObj;
         [SerializeField] private GameObject textToClone;
 
-        // —сылка на CurrentOrder, чтобы подписатьс€ на событие OnOrderChanged
         [SerializeField] private CurrentOrder currentOrder;
 
         private void OnEnable()
@@ -41,8 +39,18 @@ namespace BarSystem
             }
         }
 
-        // UpdateOrderDisplay принимает List<OrderTypeSlot> напр€мую.
         public void UpdateOrderDisplay()
+        {
+            if (currentOrder == null || currentOrder.Order == null)
+            {
+                Debug.LogError("CurrentOrder is null or Order list is null!");
+                return;
+            }
+
+            DrawOrders();
+        }
+
+        private void DrawOrders()
         {
             if (currentOrder == null || currentOrder.Order == null)
             {
@@ -55,7 +63,20 @@ namespace BarSystem
             foreach (var order in currentOrder.Order)
             {
                 GameObject text = Instantiate(textToClone, gridGroupObj);
-                text.GetComponent<TextMeshProUGUI>().text = $"{order.Count}x {Enum.GetName(typeof(OrderType), order.OrderType)}";
+                TextMeshProUGUI tmp = text.GetComponent<TextMeshProUGUI>();
+
+                // Show remaining count
+                int remaining = order.Count - order.CompletedCount;
+                tmp.text = $"{remaining}x {Enum.GetName(typeof(OrderType), order.OrderType)}";
+
+                if (order.IsCompleted)
+                {
+                    tmp.fontStyle = FontStyles.Strikethrough;
+                }
+                else
+                {
+                    tmp.fontStyle = FontStyles.Normal;
+                }
             }
         }
     }
