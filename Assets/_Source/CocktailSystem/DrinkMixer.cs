@@ -21,6 +21,7 @@ namespace CocktailSystem
         public WinChecker winChecker;
 
         private List<string> ingredients = new List<string>();
+        private bool hasWon = false; // Флаг для проверки, выиграл ли игрок
 
         void Start()
         {
@@ -33,12 +34,17 @@ namespace CocktailSystem
 
         void AddIngredient(string ingredient)
         {
-            ingredients.Add(ingredient);
-            Debug.Log("Добавлено: " + ingredient);
+            if (!hasWon) // Проверяем, выиграл ли игрок
+            {
+                ingredients.Add(ingredient);
+                Debug.Log("Добавлено: " + ingredient);
+            }
         }
 
         void MixDrinks()
         {
+            if (hasWon) return; // Если игрок уже выиграл, не смешиваем напитки
+
             string result = CheckRecipe(ingredients);
             ShowResult(result);
             winChecker.CheckWin(result);
@@ -81,19 +87,29 @@ namespace CocktailSystem
             {
                 case "TORPEDO":
                     torpedoSprite.SetActive(true);
+                    hasWon = true; // Устанавливаем флаг выигрыша
                     break;
                 case "HOWARD PHILLIPS":
                     howardphillipsSprite.SetActive(true);
+                    hasWon = true; // Устанавливаем флаг выигрыша
                     break;
                 case "LONELY RAG-A-MUFFIN":
                     lonelyragamuffinSprite.SetActive(true);
+                    hasWon = true; // Устанавливаем флаг выигрыша
                     break;
                 case "FLAPPER'S DELIGHT":
                     flappersdelightSprite.SetActive(true);
+                    hasWon = true; // Устанавливаем флаг выигрыша
                     break;
                 default:
                     wrongCombinationSprite.SetActive(true);
                     break;
+            }
+
+            // Отключаем кнопку смешивания, если игрок выиграл
+            if (hasWon)
+            {
+                mixButton.interactable = false; // Делаем кнопку недоступной
             }
         }
     }
