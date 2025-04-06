@@ -12,10 +12,10 @@ namespace CocktailSystem
         public Button iceButton;
         public Button mixButton;
 
-        public GameObject panpanosSprite;
-        public GameObject normisianoSprite;
-        public GameObject surpriseSprite;
-        public GameObject minus40Sprite;
+        public GameObject torpedoSprite;
+        public GameObject howardphillipsSprite;
+        public GameObject lonelyragamuffinSprite;
+        public GameObject flappersdelightSprite;
         public GameObject wrongCombinationSprite;
 
         public WinChecker winChecker;
@@ -47,14 +47,14 @@ namespace CocktailSystem
 
         string CheckRecipe(List<string> ingredients)
         {
-            if (MatchRecipe(ingredients, new List<string> { "Gin", "Whiskey", "Ice" }))
-                return "Panpanos";
-            if (MatchRecipe(ingredients, new List<string> { "Rum", "Ice" }))
-                return "Normisiano";
-            if (MatchRecipe(ingredients, new List<string> { "Whiskey", "Rum", "Gin" }))
-                return "Surprise from the Depths";
-            if (MatchRecipe(ingredients, new List<string> { "Ice", "Ice", "Ice" }))
-                return "-40 Degrees Fahrenheit";
+            if (MatchRecipe(ingredients, new List<string> { "Rum", "Gin", "Gin", "Ice" }))
+                return "TORPEDO";
+            if (MatchRecipe(ingredients, new List<string> { "Gin", "Rum", "Rum" }))
+                return "HOWARD PHILLIPS";
+            if (MatchRecipe(ingredients, new List<string> { "Gin", "Rum", "Whiskey" }))
+                return "LONELY RAG-A-MUFFIN";
+            if (MatchRecipe(ingredients, new List<string> { "Gin", "Gin", "Whiskey", "Whiskey", "Ice" }))
+                return "FLAPPER'S DELIGHT";
 
             return "Wrong Combination";
         }
@@ -71,25 +71,25 @@ namespace CocktailSystem
 
         void ShowResult(string result)
         {
-            panpanosSprite.SetActive(false);
-            normisianoSprite.SetActive(false);
-            surpriseSprite.SetActive(false);
-            minus40Sprite.SetActive(false);
+            torpedoSprite.SetActive(false);
+            howardphillipsSprite.SetActive(false);
+            lonelyragamuffinSprite.SetActive(false);
+            flappersdelightSprite.SetActive(false);
             wrongCombinationSprite.SetActive(false);
 
             switch (result)
             {
-                case "Panpanos":
-                    panpanosSprite.SetActive(true);
+                case "TORPEDO":
+                    torpedoSprite.SetActive(true);
                     break;
-                case "Normisiano":
-                    normisianoSprite.SetActive(true);
+                case "HOWARD PHILLIPS":
+                    howardphillipsSprite.SetActive(true);
                     break;
-                case "Surprise from the Depths":
-                    surpriseSprite.SetActive(true);
+                case "LONELY RAG-A-MUFFIN":
+                    lonelyragamuffinSprite.SetActive(true);
                     break;
-                case "-40 Degrees Fahrenheit":
-                    minus40Sprite.SetActive(true);
+                case "FLAPPER'S DELIGHT":
+                    flappersdelightSprite.SetActive(true);
                     break;
                 default:
                     wrongCombinationSprite.SetActive(true);
