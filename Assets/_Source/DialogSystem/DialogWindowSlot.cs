@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DialogSystem
 {
@@ -7,5 +8,6 @@ namespace DialogSystem
     {
         public TextMeshProUGUI Name;
         public TextMeshProUGUI Description;
+        public Button ContinueButton;
     }
 }

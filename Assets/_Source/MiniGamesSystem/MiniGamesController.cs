@@ -14,7 +14,7 @@ namespace MiniGamesSystem
         {
             OrderSO.AddCompleteOrder(orderType);
 
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
 
         }
     }
