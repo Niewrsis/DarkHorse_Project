@@ -1,3 +1,5 @@
+using BarSystem;
+using SceneSystem;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -10,6 +12,8 @@ namespace TimerSystem
         private int _currentTime;
 
         [SerializeField] private TextMeshProUGUI timerText;
+
+        [SerializeField] private OrderSO orderSO;
         private void Start()
         {
             _currentTime = maximumTimeInSeconds;
@@ -25,6 +29,8 @@ namespace TimerSystem
                 _currentTime--;
                 UpdateUI();
             }
+            OnLose();
+            StartCoroutine(StartTimer());
         }
 
         private void UpdateUI()
@@ -36,6 +42,13 @@ namespace TimerSystem
             int minutes = time / 60;
             int seconds = time % 60;
             return string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+        private void OnLose()
+        {
+            _currentTime = maximumTimeInSeconds;
+            orderSO.IsFirstGeneration = true;
+            UpdateUI();
+            SceneChanger.ChangeScene(0);
         }
     }
 }
