@@ -11,7 +11,8 @@ namespace BeerSystem
         public GameObject sprite2;
         public Button victoryButton;
         public Button completionButton;
-        public Button resetButton; // Новая кнопка для сброса прогресса
+        public Button resetButton;
+        public GameObject foamImage;
 
         private float fillSpeed1 = 1f;
         private float fillSpeed2 = 10f;
@@ -25,8 +26,9 @@ namespace BeerSystem
         {
             victoryButton.gameObject.SetActive(false);
             completionButton.onClick.AddListener(OnCompletionButtonClick);
-            resetButton.onClick.AddListener(OnResetButtonClick); // Добавляем слушатель для новой кнопки
+            resetButton.onClick.AddListener(OnResetButtonClick);
             SetRandomRange();
+            foamImage.SetActive(false);
         }
 
         private void Update()
@@ -34,7 +36,6 @@ namespace BeerSystem
             if (isFilling1)
             {
                 image1.fillAmount += Time.deltaTime / fillSpeed1;
-
                 if (image1.fillAmount >= 1f)
                 {
                     isFilling2 = true;
@@ -44,7 +45,6 @@ namespace BeerSystem
             if (isFilling2)
             {
                 image2.fillAmount += Time.deltaTime / fillSpeed2;
-
                 if (image2.fillAmount >= 1f)
                 {
                     image2.fillAmount = 1f;
@@ -54,6 +54,7 @@ namespace BeerSystem
 
             UpdateSprites();
             CheckVictoryCondition();
+            UpdateFoam();
         }
 
         public void OnCompletionButtonClick()
@@ -89,16 +90,30 @@ namespace BeerSystem
 
         private void OnResetButtonClick()
         {
-            // Сбрасываем прогресс изображения 2
             image2.fillAmount = 0;
-            isFilling2 = false; // Останавливаем заполнение
-            victoryButton.gameObject.SetActive(false); // Скрываем кнопку победы
+            isFilling2 = false;
+            victoryButton.gameObject.SetActive(false);
+            foamImage.SetActive(false);
         }
 
         private void UpdateSprites()
         {
             sprite1.SetActive(image2.fillAmount >= minFillAmount && image2.fillAmount <= maxFillAmount);
             sprite2.SetActive(image2.fillAmount < minFillAmount || image2.fillAmount > maxFillAmount);
+        }
+
+        private void UpdateFoam()
+        {
+            if (image2.fillAmount >= 0.065f)
+            {
+                foamImage.SetActive(true);
+                float foamHeight = image2.rectTransform.rect.height * image2.fillAmount;
+                foamImage.transform.localPosition = new Vector3(-17, -400f + foamHeight, 0);
+            }
+            else
+            {
+                foamImage.SetActive(false);
+            }
         }
 
         private void CheckVictoryCondition()
