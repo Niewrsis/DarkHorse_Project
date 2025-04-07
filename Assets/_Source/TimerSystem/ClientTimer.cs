@@ -1,4 +1,5 @@
 using BarSystem;
+using MindSystem;
 using SceneSystem;
 using System.Collections;
 using TMPro;
@@ -14,6 +15,8 @@ namespace TimerSystem
         [SerializeField] private TextMeshProUGUI timerText;
 
         [SerializeField] private OrderSO orderSO;
+
+        [SerializeField] private MindControll mindControll;
         private void Start()
         {
             _currentTime = maximumTimeInSeconds;
@@ -32,6 +35,13 @@ namespace TimerSystem
             OnLose();
             StartCoroutine(StartTimer());
         }
+        public void ResetTimer()
+        {
+            StopCoroutine(StartTimer());
+            _currentTime = maximumTimeInSeconds;
+            StartCoroutine(StartTimer());
+            UpdateUI();
+        }
 
         private void UpdateUI()
         {
@@ -47,6 +57,7 @@ namespace TimerSystem
         {
             _currentTime = maximumTimeInSeconds;
             orderSO.IsFirstGeneration = true;
+            mindControll.DecreaseMind();
             UpdateUI();
             SceneChanger.ChangeScene(0);
         }

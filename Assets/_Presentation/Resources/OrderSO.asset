@@ -16,15 +16,15 @@ MonoBehaviour:
   Cocktail:
     OrderType: 0
     Count: 2
-    CompletedCount: 2
+    CompletedCount: 0
     IsSpawnedAsFirst: 1
   Beer:
     OrderType: 1
-    Count: 0
+    Count: 2
     CompletedCount: 0
-    IsSpawnedAsFirst: 0
+    IsSpawnedAsFirst: 1
   Salad:
     OrderType: 2
-    Count: 1
-    CompletedCount: 1
+    Count: 2
+    CompletedCount: 0
     IsSpawnedAsFirst: 1
