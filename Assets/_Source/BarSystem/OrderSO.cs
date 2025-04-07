@@ -1,3 +1,4 @@
+using MindSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,6 +51,11 @@ namespace BarSystem
                         Debug.Log("OrderType was not found");
                         break;
                     }
+            }
+            if(IsEverythingCompleted())
+            {
+                FindAnyObjectByType<MindControll>().IncreaseMind();
+                IsFirstGeneration = true;
             }
         }
         public List<OrderTypeSlot> GetAllFirstSpawnedOrders()
