@@ -27,7 +27,7 @@ namespace DialogSystem
             dialogueStarted = true;
         }
 
-        private void StartDialogue()
+        public void StartDialogue()
         {
             if (DayToLoad != null)
             {
@@ -38,10 +38,10 @@ namespace DialogSystem
                 Debug.LogError("DaySO is not assigned on DialogueTimer!");
             }
         }
-        public void SwitchSceneToBasement()
+        public void SwitchSceneToBasement(int index)
         {
             Destroy(FindFirstObjectByType<GlobalTimer>());
-            SceneChanger.ChangeScene(ConstVar.BASEMENT_SCREEN_INDEX);
+            SceneChanger.ChangeScene(index);
         }
         private void OnDisable()
         {

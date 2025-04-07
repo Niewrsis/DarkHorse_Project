@@ -16,6 +16,8 @@ namespace BasementSystem
 
         [SerializeField] private int indexTest;
 
+        [SerializeField] private BasementEvents events;
+
 
         private void Awake()
         {
@@ -44,6 +46,7 @@ namespace BasementSystem
             yield return new WaitForSeconds(duration);
             gif.SetActive(false);
             background.SetActive(true);
+            events.OnEnterBasement?.Invoke();
         }
     }
 }
