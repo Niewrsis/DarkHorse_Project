@@ -15,7 +15,7 @@ namespace BeerSystem
         public GameObject foamImage;
 
         private float fillSpeed1 = 1f;
-        private float fillSpeed2 = 10f;
+        private float fillSpeed2 = 4f;
         private bool isFilling1 = false;
         private bool isFilling2 = false;
 
@@ -108,7 +108,7 @@ namespace BeerSystem
             {
                 foamImage.SetActive(true);
                 float foamHeight = image2.rectTransform.rect.height * image2.fillAmount;
-                foamImage.transform.localPosition = new Vector3(-17, -400f + foamHeight, 0);
+                foamImage.transform.localPosition = new Vector3(-17, -405f + foamHeight, 0);
             }
             else
             {
