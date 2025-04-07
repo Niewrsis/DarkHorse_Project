@@ -1,16 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace BarSystem
 {
-    public class OrderGeneration : IOrderService
+    public class OrderGeneration
     {
-        public List<FoodTypeDataSO> AvailableFoodTypes; // Ссылка на список Scriptable Objects
+        private List<FoodTypeDataSO> _availableFoodTypes;
+        private OrderSO _orderSO;
 
         private readonly List<OrderTypeSlot> _order = new List<OrderTypeSlot>();
         private readonly System.Random _rnd = new System.Random();
 
-        public List<OrderTypeSlot> GenerateNewOrder() // Реализуем интерфейс IOrderService
+        public OrderGeneration(List<FoodTypeDataSO> availableFoodTypes, OrderSO orderSO)
+        {
+            _availableFoodTypes = availableFoodTypes;
+            _orderSO = orderSO;
+        }
+        public void GenerateNewOrder()
         {
             _order.Clear();
 
@@ -30,23 +37,23 @@ namespace BarSystem
                         Debug.LogWarning("Не удалось создать уникальный заказ после " + maxAttempts + " попыток.  Пропускаем.");
                         break;
                     }
-                } while (isOrderRepeated(newOrder));
+                } while (IsOrderRepeated(newOrder));
 
-                if (attempts <= maxAttempts && newOrder != null) // Проверяем, что newOrder не null
+                if (attempts <= maxAttempts && newOrder != null)
                     _order.Add(newOrder);
             }
-            return _order;
+
+            _orderSO.SetNewOrder(_order);
         }
 
         private OrderTypeSlot GenerateSlot()
         {
-            FoodTypeDataSO foodTypeData = AvailableFoodTypes[_rnd.Next(0, AvailableFoodTypes.Count)];
+            FoodTypeDataSO foodTypeData = _availableFoodTypes[_rnd.Next(0, _availableFoodTypes.Count)];
             int orderAmount = _rnd.Next(1, 3);
 
-            // ADD THIS CHECK
-            if (orderAmount <= 0) // Проверяем, что количество больше 0
+            if (orderAmount <= 0)
             {
-                return null; // Если количество 0, возвращаем null
+                return null;
             }
 
             OrderTypeSlot slot = new OrderTypeSlot();
@@ -55,12 +62,9 @@ namespace BarSystem
             return slot;
         }
 
-        private bool isOrderRepeated(OrderTypeSlot newOrder)
+        private bool IsOrderRepeated(OrderTypeSlot newOrder)
         {
-            if (newOrder == null) // Добавляем проверку на null
-            {
-                return false; // Если заказ null, то он не повторяется
-            }
+            if (newOrder == null)  return false;
 
             foreach (OrderTypeSlot v in _order)
             {

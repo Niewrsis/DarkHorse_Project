@@ -119,56 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &340341892
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 340341893}
-  - component: {fileID: 340341896}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &340341893
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340341892}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6730875, y: -2.0636408, z: -10.018893}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &340341896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340341892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23f421751d7172458be09fd94f19987, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentOrder: {fileID: 736470185}
-  ordersView: {fileID: 736470186}
-  AvailableFoodTypes:
-  - {fileID: 11400000, guid: 4b78ddaa7eace294e88ebcb9c767cca4, type: 2}
-  - {fileID: 11400000, guid: 26eead7ee3df6ad4eb2c3487e1f665cc, type: 2}
-  - {fileID: 11400000, guid: 10beaa709ae94864fad5a45138768e3d, type: 2}
 --- !u!1 &448721253
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,9 +386,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 736470184}
-  - component: {fileID: 736470185}
   - component: {fileID: 736470186}
   - component: {fileID: 736470187}
+  - component: {fileID: 736470188}
   m_Layer: 0
   m_Name: BarManager
   m_TagString: Untagged
@@ -461,21 +411,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &736470185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736470183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1bd309dccd065b4ca86ef4b891b1b57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnOrderChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &736470186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,9 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50c04bc389599b4d82bf521b44ad179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentOrder: {fileID: 736470185}
-  orderItemPrefab: {fileID: 4491551867297940072, guid: 0265a883f2348f540af6a94fdd1e76d3, type: 3}
-  orderContainer: {fileID: 522299250}
+  objForSpawn: {fileID: 522299249}
+  orderPrefab: {fileID: 4491551867297940072, guid: 0265a883f2348f540af6a94fdd1e76d3, type: 3}
+  orderSO: {fileID: 11400000, guid: 3be72ce519522284583f163848c2ef2e, type: 2}
 --- !u!114 &736470187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +441,23 @@ MonoBehaviour:
   cocktailButton: {fileID: 448721255}
   beerButton: {fileID: 1970202983}
   saladButton: {fileID: 1601244233}
+--- !u!114 &736470188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736470183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9826b9d79dd6a3247b0e1c1c2990c60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderSO: {fileID: 11400000, guid: 3be72ce519522284583f163848c2ef2e, type: 2}
+  availableFoodTypes:
+  - {fileID: 11400000, guid: 4b78ddaa7eace294e88ebcb9c767cca4, type: 2}
+  - {fileID: 11400000, guid: 26eead7ee3df6ad4eb2c3487e1f665cc, type: 2}
+  - {fileID: 11400000, guid: 10beaa709ae94864fad5a45138768e3d, type: 2}
 --- !u!1 &1125342453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,7 +1158,6 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 340341893}
   - {fileID: 736470184}
   - {fileID: 1565919944}
   - {fileID: 1429146821}
