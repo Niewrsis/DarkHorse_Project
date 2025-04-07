@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5060ad59abc6448ce652d326e1760, type: 3}
+  m_Name: Day1Basement
+  m_EditorClassIdentifier: 
+  Dialog:
+  - Name: ?????
+    Text: "An actress\u2026that\u2019s precious\u2026the only good actor in this
+      town is you, talking with a straight face despite everything\u2026 that takes
+      talent\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Shut up and eat your food\r"
+    IsPause: 1
+    IsEnd: 0
+  - Name: ?????
+    Text: "This could barely be labeled as food! No taste, no texture. So bland.
+      I need something more succulent. How about some chicken, freshly butchered,
+      bring it to me tomorrow\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "No. Only ground meat for you\u2026\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: ?????
+    Text: "Don\u2019t be a fool, Edward. You know that without food i will have to
+      leave this hole and hunt, and you are going to be the first to go\u2026 can\u2019t
+      let such a good servant go to waste\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: ...
+    IsPause: 0
+    IsEnd: 1

@@ -59,7 +59,7 @@ namespace TimerSystem
             orderSO.IsFirstGeneration = true;
             mindControll.DecreaseMind();
             UpdateUI();
-            SceneChanger.ChangeScene(0);
+            SceneChanger.ChangeScene(1);
         }
     }
 }

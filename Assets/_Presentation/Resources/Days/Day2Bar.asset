@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5060ad59abc6448ce652d326e1760, type: 3}
+  m_Name: Day2Bar
+  m_EditorClassIdentifier: 
+  Dialog:
+  - Name: Jess
+    Text: "Hi Eddie, pour me a Flapper\u2019s Delight please\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: 'Ed '
+    Text: 'Alright. Rough day today?
+
+'
+    IsPause: 0
+    IsEnd: 0
+  - Name: 'Jess '
+    Text: "Yeah, cabaret\u2019s got shut down. I really hope that Bill fella of yours
+      will pull through with that acting job."
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "I talked to him, don\u2019t worry. He will. Your audition is tomorrow,
+      so might not want to get too jazzed tonight\u2026\r\n\r"
+    IsPause: 0
+    IsEnd: 0
+  - Name: 'Jess '
+    Text: "I know I know sugar, but a cocktail wouldn\u2019t hurt\u2026 Are you alright?
+      You look a bit pale\u2026\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Yeah, yeah i am fine, just\u2026 got some errands to run after closing\u2026gotta
+      get some chickens from Bob.\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Jess
+    Text: "Bob? Isn\u2019t he a farmer?"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "He is, i just wanted to\u2026uh\u2026try butchering it myself. You know
+      how today\u2019s world is - need all the skills i can get\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Jess
+    Text: "Fair point, just never expected you to fancy being a butcher\u2026 so,
+      how about that cocktail?\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Coming right up!\r\r"
+    IsPause: 0
+    IsEnd: 1

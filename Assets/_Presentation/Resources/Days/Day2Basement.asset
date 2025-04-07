@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5060ad59abc6448ce652d326e1760, type: 3}
+  m_Name: Day2Basement
+  m_EditorClassIdentifier: 
+  Dialog:
+  - Name: ?????
+    Text: "I see you brought me the chicken i requested\u2026 good\u2026 you are
+      smart enough to comply\u2026\r\r"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Just take it already\u2026\r"
+    IsPause: 1
+    IsEnd: 0
+  - Name: ?????
+    Text: "Ah\u2026 that was good\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: 'So we are all good now? You will just eat chicken, right?
+
+'
+    IsPause: 0
+    IsEnd: 0
+  - Name: ?????
+    Text: "No\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "What? Why? How come you are still not satisfied?! You liked the chicken,
+      didn\u2019t you?\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: ?????
+    Text: "I did, it was tasty\u2026 but what is a dinner without a dessert? I want
+      you to bring me a dog tomorrow\u2026\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Oh Lord, that is so messed up\u2026 I can\u2019t do this!\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: ?????
+    Text: "Yes you can, we have such a special bond, don\u2019t we Edward?"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Ugh\u2026"
+    IsPause: 0
+    IsEnd: 1
