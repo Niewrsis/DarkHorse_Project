@@ -1975,6 +1975,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 491374054610092981, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 184.9657
+      objectReference: {fileID: 0}
+    - target: {fileID: 491374054610092981, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 59.777
+      objectReference: {fileID: 0}
+    - target: {fileID: 491374054610092981, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000024796
+      objectReference: {fileID: 0}
+    - target: {fileID: 491374054610092981, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215135565699205115, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7754988575891523622, guid: caa97fb2b32640b46972d20a9e1662d3, type: 3}
     - target: {fileID: 4759173964949981738, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2075,13 +2095,33 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6040684678369032888, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 467.0812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040684678369032888, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 87.1415
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040684678369032888, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040684678369032888, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 471
+      objectReference: {fileID: 0}
     - target: {fileID: 7670517336114354978, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
       propertyPath: m_Name
       value: TimersCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7992878840160449526, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5997285656468504382, guid: c02f130282e4b304181756187779d4eb, type: 3}
     - target: {fileID: 8803176466110209034, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
       propertyPath: m_fontSize
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8803176466110209034, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
       propertyPath: m_fontAsset
@@ -2089,7 +2129,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: be5efc8755762fd4c935bc9aebc5987b, type: 2}
     - target: {fileID: 8803176466110209034, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
       propertyPath: m_fontSizeBase
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8803176466110209034, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
       propertyPath: m_sharedMaterial
