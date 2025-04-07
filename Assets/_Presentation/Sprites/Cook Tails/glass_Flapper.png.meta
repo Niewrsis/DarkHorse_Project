@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      glass_Flapper_0: 857599341685940287
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
