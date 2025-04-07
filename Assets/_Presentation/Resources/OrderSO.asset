@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5642ec4982bd6cf4a8c9abb566e727a0, type: 3}
   m_Name: OrderSO
   m_EditorClassIdentifier: 
-  IsFirstGeneration: 0
+  IsFirstGeneration: 1
   Cocktail:
     OrderType: 0
     Count: 2

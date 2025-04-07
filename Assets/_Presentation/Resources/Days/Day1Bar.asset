@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5060ad59abc6448ce652d326e1760, type: 3}
+  m_Name: Day1Bar
+  m_EditorClassIdentifier: 
+  Dialog:
+  - Name: Jess
+    Text: "Hey there sugar! How\u2019s business goin\u2019?\r"
+    IsPause: 0
+    IsEnd: 0
+  - Name: 'Ed '
+    Text: "Going fine, quiet day today\u2026 Closing the place down soon. You want
+      a drink?"
+    IsPause: 0
+    IsEnd: 0
+  - Name: 'Jess '
+    Text: "Oh i would love to, but i have no money to spare, it\u2019s been tough
+      the last couple of months. I heard they are going to close the cabaret down\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Sounds terrible, what do you plan to do?\r"
+    IsPause: 0
+    IsEnd: 0
+  - Name: 'Jess '
+    Text: "Well certainly the last thing i want to do is go back to my pops. He seems
+      to think i am some kind of flapper, just because i am a dancer\u2026 he will
+      never get it\u2026 God i am so lost, what am i to do?\r"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "You said you did some acting back in Arkansas, I\u2019ll talk to Bill,
+      he manages the local theater. It\u2019s not exactly Broadway and the pay is
+      not as good as in the cabaret, but it beats going back to your dad in Little
+      Rock\r"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Jess
+    Text: "You will?! Ed, honey, I don\u2019t even know how to thank you, I-I..."
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Hey, it\u2019s no problem darling. How about a \u201CTorpedo\u201D?\r"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Jess
+    Text: "Eddie, I told you I have no cash on me\u2026\r"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Jess, darling, we\u2019ve been together for 2 months now and you still
+      want to pay for cocktails? All drinks are on the house for you as long as I
+      run this bar.\r"
+    IsPause: 0
+    IsEnd: 1

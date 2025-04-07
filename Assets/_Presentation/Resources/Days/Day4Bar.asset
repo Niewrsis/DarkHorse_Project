@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5060ad59abc6448ce652d326e1760, type: 3}
+  m_Name: Day4Bar
+  m_EditorClassIdentifier: 
+  Dialog:
+  - Name: Jess
+    Text: "Hey Eddie! How\u2019s it going?\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: 'Ed '
+    Text: Fine
+    IsPause: 0
+    IsEnd: 0
+  - Name: 'Jess '
+    Text: "You are not talking much\u2026 something bad happen?\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "No, no it\u2019s all good"
+    IsPause: 0
+    IsEnd: 0
+  - Name: 'Jess '
+    Text: "So, it was my first rehearsal today and Bill said I was great and have
+      great potential to become a star and\u2026\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "Jess. I need you to see something\u2026\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Jess
+    Text: 'What do you want to show me?
+
+'
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "It\u2019s a\u2026 surprise. Just trust me. it\u2019s important\u2026\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Jess
+    Text: Well if you say so darling, lead the way
+    IsPause: 0
+    IsEnd: 1

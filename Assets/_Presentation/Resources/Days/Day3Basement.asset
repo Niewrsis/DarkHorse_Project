@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5060ad59abc6448ce652d326e1760, type: 3}
+  m_Name: Day3Basement
+  m_EditorClassIdentifier: 
+  Dialog:
+  - Name: Ed
+    Text: "Here. Just get it over with\u2026"
+    IsPause: 1
+    IsEnd: 0
+  - Name: ?????
+    Text: "Mmmm\u2026so sweet\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: 'You happy now?
+
+'
+    IsPause: 0
+    IsEnd: 0
+  - Name: ?????
+    Text: "No Edward\u2026 I am not\u2026 I don\u2019t think you are devoted enough
+      to me.\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: What in tarnation is that supposed to mean?
+    IsPause: 0
+    IsEnd: 0
+  - Name: ?????
+    Text: "Well, you are a perfect servant. You get me everything i want, but you
+      hesitate\u2026 it\u2019s like you are always thinking of someone else. I know
+      that someone else is Jessica\u2026 And i will not share my best breadwinner
+      yet\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "No\u2026 no\u2026 no\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: ?????
+    Text: "Bring her to me Ed, alive. I want you to see it. I want you to finally
+      let go of this pathetic world and accept your purpose in serving a being higher
+      than yourself\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "NO! Not Jessica! You can\u2019t\u2026"
+    IsPause: 0
+    IsEnd: 0
+  - Name: ?????
+    Text: "If you don\u2019t bring her to me, i will consume you. I can\u2019t let
+      such a good servant abandon me\u2026 if you want to live, you must accept the
+      truth - you can\u2019t escape your fate\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "God\u2026God\u2026i don\u2019t want to die\u2026Lord\u2026\r\n"
+    IsPause: 0
+    IsEnd: 0
+  - Name: Ed
+    Text: "\u2026forgive me for what i am going to do\r"
+    IsPause: 0
+    IsEnd: 1

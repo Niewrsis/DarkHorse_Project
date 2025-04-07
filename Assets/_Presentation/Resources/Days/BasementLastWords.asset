@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5060ad59abc6448ce652d326e1760, type: 3}
+  m_Name: BasementLastWords
+  m_EditorClassIdentifier: 
+  Dialog:
+  - Name: ????
+    Text: JUST TRUST ME
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: SERVANT
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: ITS YOUR FAULT
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: YOU KILLED HER
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: SHE LOVED YOU
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: SPINELESS
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: 'A MINDLESS PUPPET
+
+'
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: SHE TRUSTED YOU
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: 'DO YOU FEEL PROUD?
+
+'
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: "ISN\u2019T LIFE SO BEAUTIFUL?"
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: 'I CAN STILL HEAR HER SCREAMS
+
+'
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: 'WAS IT WORTH IT?
+
+'
+    IsPause: 1
+    IsEnd: 0
+  - Name: ????
+    Text: 'KILL IT KILL IT KILL IT
+
+'
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: REDEEM YOURSELF
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: ATONE
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: SACRIFICE
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: SAVE THE ONES YOU CAN
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: 'CEANSE IT WITH FIRE
+
+'
+    IsPause: 0
+    IsEnd: 0
+  - Name: ????
+    Text: EARN YOUR FORGIVENESS
+    IsPause: 0
+    IsEnd: 1
