@@ -6,4 +6,6 @@ public static class ConstVar
     public static readonly int COCKTAIL_SCREEN_INDEX = 3;
     public static readonly int SALAD_SCREEN_INDEX = 4;
     public static readonly int BASEMENT_SCREEN_INDEX = 5;
+
+    public static readonly string DAYS_PP = "Days";
 }

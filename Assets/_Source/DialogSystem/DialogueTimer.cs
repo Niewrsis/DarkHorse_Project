@@ -1,6 +1,7 @@
 using SceneSystem;
 using System;
 using System.Collections;
+using TimerSystem;
 using UnityEngine;
 
 namespace DialogSystem
@@ -39,6 +40,7 @@ namespace DialogSystem
         }
         public void SwitchSceneToBasement()
         {
+            Destroy(FindFirstObjectByType<GlobalTimer>());
             SceneChanger.ChangeScene(ConstVar.BASEMENT_SCREEN_INDEX);
         }
         private void OnDisable()
