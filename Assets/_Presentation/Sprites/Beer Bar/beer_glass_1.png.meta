@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      beer_glass_1_0: -4745749649928678776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

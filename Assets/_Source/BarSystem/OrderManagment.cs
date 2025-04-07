@@ -14,6 +14,10 @@ namespace BarSystem
         {
             _orderGeneration = new(availableFoodTypes, orderSO);
 
+            if (orderSO.IsEverythingCompleted())
+            {
+                _orderGeneration.GenerateNewOrder();
+            }
             if (orderSO.IsFirstGeneration)
             {
                 _orderGeneration.GenerateNewOrder();

@@ -28,7 +28,6 @@ namespace BarSystem
         }
         public void AddCompleteOrder(OrderType orderType)
         {
-            Debug.Log($"Called type - {Enum.GetName(typeof(OrderType), orderType)}");
             switch (orderType)
             {
                 case OrderType.Cocktail:

@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5642ec4982bd6cf4a8c9abb566e727a0, type: 3}
   m_Name: OrderSO
   m_EditorClassIdentifier: 
-  IsFirstGeneration: 1
+  IsFirstGeneration: 0
   Cocktail:
     OrderType: 0
     Count: 2
-    CompletedCount: 0
+    CompletedCount: 2
     IsSpawnedAsFirst: 1
   Beer:
     OrderType: 1
-    Count: 2
+    Count: 0
     CompletedCount: 0
-    IsSpawnedAsFirst: 1
+    IsSpawnedAsFirst: 0
   Salad:
     OrderType: 2
     Count: 1
-    CompletedCount: 0
+    CompletedCount: 1
     IsSpawnedAsFirst: 1

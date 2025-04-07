@@ -40,7 +40,6 @@ namespace FoodSelection
                 newFood.layer = LayerMask.NameToLayer("UI");
                 newFood.transform.localScale = Vector3.one;
                 _foodOnPlate.Add(draggableItem.foodName);
-                Debug.Log("Added " + draggableItem.foodName + " to plate.");
                 gameManager.CheckWinCondition(_foodOnPlate);
             }
         }
@@ -55,7 +54,6 @@ namespace FoodSelection
 
             _foodOnPlate.Clear();
             gameManager.CheckWinCondition(_foodOnPlate);
-            Debug.Log("Plate cleared.");
         }
     }
 }
