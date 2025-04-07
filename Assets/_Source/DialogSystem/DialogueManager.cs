@@ -46,6 +46,14 @@ namespace DialogSystem
 
         public void DisplayNextLine()
         {
+            if (isTyping)
+            {
+                StopAllCoroutines();
+                DialogWindow.Description.text = currentDay.Dialog[currentDialogIndex - 1].Text; // Show full text instantly
+                isTyping = false;
+                return;
+            }
+
             if (currentDialogIndex >= currentDay.Dialog.Count)
             {
                 EndDialogue();
@@ -62,27 +70,12 @@ namespace DialogSystem
                 // For example, you could disable automatic progression and wait for a button press.
             }
 
-            //Check if it's the last dialogue line:
             if (speakerSlot.IsEnd)
             {
                 EndDialogue();
                 return;
             }
-
-            DialogWindow.ContinueButton.gameObject.SetActive(true); // Enable Continue Button here!
-        }
-
-        public void OnContinueButtonPressed()
-        {
-            if (isTyping)
-            {
-                StopAllCoroutines();
-                DialogWindow.Description.text = currentDay.Dialog[currentDialogIndex].Text;
-                isTyping = false;
-            }
-            currentDialogIndex++;
-            DialogWindow.ContinueButton.gameObject.SetActive(false); //Disable continue button here
-            DisplayNextLine();
+            DialogWindow.ContinueButton.gameObject.SetActive(true);
         }
 
         private IEnumerator TypeSentence(string sentence)
@@ -101,6 +94,21 @@ namespace DialogSystem
             isTyping = false;
         }
 
+        public void OnContinueButtonPressed()
+        {
+            if (isTyping)
+            {
+                StopAllCoroutines();
+                DialogWindow.Description.text = currentDay.Dialog[currentDialogIndex].Text;
+                isTyping = false;
+            }
+            else
+            {
+                DialogWindow.ContinueButton.gameObject.SetActive(false);
+                currentDialogIndex++;
+                DisplayNextLine();
+            }
+        }
 
         public void EndDialogue()
         {
@@ -110,4 +118,6 @@ namespace DialogSystem
             currentDialogIndex = 0;
         }
     }
+
+
 }

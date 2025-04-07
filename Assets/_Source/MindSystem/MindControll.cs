@@ -1,7 +1,10 @@
+using SceneSystem;
 using System;
 using TimerSystem;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace MindSystem
 {
@@ -13,6 +16,7 @@ namespace MindSystem
 
         [SerializeField] private int increasingInPercent;
         [SerializeField] private int decreasingPercent;
+        [SerializeField] private Button button;
 
         public Action OnMind;
 
@@ -35,7 +39,6 @@ namespace MindSystem
             _currentMind -= decreasingPercent;
             if( _currentMind <= 0)
             {
-                Debug.Log(_currentMind);
                 _currentMind = 0;
                 OnLose();
             }
@@ -43,7 +46,9 @@ namespace MindSystem
         }
         private void OnLose()
         {
-            Debug.Log("Lose");
+            button.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+            button.onClick.AddListener(() => { SceneManager.LoadScene(0); Time.timeScale = 1f;  Destroy(gameObject); });
         }
         private void UpdateUI()
         {

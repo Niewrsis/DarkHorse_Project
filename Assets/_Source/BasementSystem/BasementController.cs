@@ -1,0 +1,52 @@
+using DG.Tweening;
+using System.Collections;
+using UnityEngine;
+
+namespace BasementSystem
+{
+    public class BasementController : MonoBehaviour
+    {
+        [SerializeField] private float enter1Timing;
+        [SerializeField] private float enter2Timing;
+
+        [SerializeField] private GameObject gifEnter1;
+        [SerializeField] private GameObject gifEnter2;
+
+        [SerializeField] private GameObject background;
+
+        [SerializeField] private int indexTest;
+
+        [SerializeField] private BasementEvents events;
+
+
+        private void Awake()
+        {
+            gifEnter1.SetActive(false);
+            gifEnter2.SetActive(false);
+            background.SetActive(false);
+
+            switch (indexTest)
+            {
+                case 1:
+                    {
+                        gifEnter1.SetActive(true);
+                        StartCoroutine(EnterToBasement(gifEnter1, enter1Timing));
+                        break;
+                    }
+                case 2:
+                    {
+                        gifEnter2.SetActive(true);
+                        StartCoroutine(EnterToBasement(gifEnter2, enter2Timing));
+                        break;
+                    }
+            }
+        }
+        private IEnumerator EnterToBasement(GameObject gif, float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            gif.SetActive(false);
+            background.SetActive(true);
+            events.OnEnterBasement?.Invoke();
+        }
+    }
+}
