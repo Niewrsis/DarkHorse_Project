@@ -1,3 +1,4 @@
+using DialogSystem;
 using System;
 using System.Collections;
 using TMPro;
@@ -8,6 +9,7 @@ namespace TimerSystem
     public class GlobalTimer : MonoBehaviour
     {
         [SerializeField] private int maximumTimeInSeconds;
+        [SerializeField] private DialogueTimer dialogueTimer;
         private int _currentTime;
 
         [SerializeField] private TextMeshProUGUI timerText;
@@ -35,6 +37,7 @@ namespace TimerSystem
                 _currentTime--;
                 UpdateUI();
             }
+            dialogueTimer.OnTimerEnds?.Invoke();
         }
 
         private void UpdateUI()
