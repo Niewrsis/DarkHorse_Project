@@ -1271,6 +1271,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1553846589716532301, guid: 94f3e71f479adee4c9976e811ead0804, type: 3}
+      propertyPath: OrderSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 3be72ce519522284583f163848c2ef2e, type: 2}
+    - target: {fileID: 1553846589716532301, guid: 94f3e71f479adee4c9976e811ead0804, type: 3}
       propertyPath: orderType
       value: 1
       objectReference: {fileID: 0}
@@ -1641,14 +1645,14 @@ MonoBehaviour:
       - m_Target: {fileID: 1640368244}
         m_TargetAssemblyTypeName: MiniGamesSystem.MiniGameController, Assembly-CSharp
         m_MethodName: OnMiniGameCompleted
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1902105536
 MonoBehaviour:

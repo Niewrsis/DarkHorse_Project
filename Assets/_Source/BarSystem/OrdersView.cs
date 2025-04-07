@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,43 +6,26 @@ namespace BarSystem
 {
     public class OrdersView : MonoBehaviour
     {
-        public CurrentOrder currentOrder;
-        public GameObject orderItemPrefab;
-        public Transform orderContainer;
+        [SerializeField] private GameObject objForSpawn;
+        [SerializeField] private GameObject orderPrefab;
 
-        private List<GameObject> orderItems = new List<GameObject>();
+        [SerializeField] private OrderSO orderSO;
 
-        public void UpdateUI()
+        private void Start()
         {
-            foreach (Transform child in orderContainer)
+            foreach(OrderTypeSlot slot in orderSO.GetAllFirstSpawnedOrders())
             {
-                Destroy(child.gameObject);
-            }
-            orderItems.Clear();
+                TextMeshProUGUI textObj = Instantiate(orderPrefab, objForSpawn.transform).GetComponentInChildren<TextMeshProUGUI>();
 
-            if (currentOrder != null && currentOrder.Order != null)
-            {
-                foreach (var slot in currentOrder.Order)
+                if(!slot.IsCompleted)
                 {
-                    Debug.Log($"OrderType: {slot.OrderType}, Count: {slot.Count}, CompletedCount: 0");
-
-                    GameObject orderItem = Instantiate(orderItemPrefab, orderContainer);
-                    orderItems.Add(orderItem);
-
-                    TextMeshProUGUI orderTypeText = orderItem.GetComponentInChildren<TextMeshProUGUI>();
-
-
-                    orderTypeText.rectTransform.sizeDelta = new Vector2(200, 50); // Установите ширину и высоту
-                    orderTypeText.rectTransform.anchoredPosition = Vector2.zero; // Установите позицию
-                    orderTypeText.fontSize = 36;
-                    orderTypeText.color = Color.black;
-                    // Set the text
-                    orderTypeText.text = $"{slot.OrderType}: {slot.Count}";
+                    textObj.text = $"{Enum.GetName(typeof(OrderType), slot.OrderType)} : {slot.Count - slot.CompletedCount}";
                 }
-            }
-            else
-            {
-                Debug.Log("currentOrder is null or currentOrder.Order is null");
+                else
+                {
+                    textObj.fontStyle = FontStyles.Strikethrough;
+                    textObj.text = $"{Enum.GetName(typeof(OrderType), slot.OrderType)} : 0";
+                }
             }
         }
     }
