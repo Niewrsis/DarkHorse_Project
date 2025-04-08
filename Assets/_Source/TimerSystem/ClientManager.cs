@@ -18,10 +18,16 @@ public class ClientManager : MonoBehaviour
     {
         int randomIndex = Random.Range(0, clientSprites.Count);
         clientImage.sprite = clientSprites[randomIndex];
+        clientImage.gameObject.SetActive(true);
     }
 
     public void ShowHiddenImage()
     {
         hiddenImage.SetActive(true);
+    }
+
+    public void HideClient()
+    {
+        clientImage.gameObject.SetActive(false);
     }
 }

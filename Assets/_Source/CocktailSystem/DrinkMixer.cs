@@ -19,9 +19,10 @@ namespace CocktailSystem
         public GameObject wrongCombinationSprite;
 
         public WinChecker winChecker;
+        public IngredientIndicator ingredientIndicator;
 
         private List<string> ingredients = new List<string>();
-        private bool hasWon = false; // Флаг для проверки, выиграл ли игрок
+        private bool hasWon = false;
 
         void Start()
         {
@@ -34,21 +35,24 @@ namespace CocktailSystem
 
         void AddIngredient(string ingredient)
         {
-            if (!hasWon) // Проверяем, выиграл ли игрок
+            if (!hasWon)
             {
+                ingredientIndicator.UpdateIndicators(ingredient);
+
+                ingredients.Clear();
                 ingredients.Add(ingredient);
-                Debug.Log("Добавлено: " + ingredient);
             }
         }
 
         void MixDrinks()
         {
-            if (hasWon) return; // Если игрок уже выиграл, не смешиваем напитки
+            if (hasWon) return;
 
             string result = CheckRecipe(ingredients);
             ShowResult(result);
             winChecker.CheckWin(result);
             ingredients.Clear();
+            ingredientIndicator.UpdateIndicators("");
         }
 
         string CheckRecipe(List<string> ingredients)
@@ -87,29 +91,28 @@ namespace CocktailSystem
             {
                 case "TORPEDO":
                     torpedoSprite.SetActive(true);
-                    hasWon = true; // Устанавливаем флаг выигрыша
+                    hasWon = true;
                     break;
                 case "HOWARD PHILLIPS":
                     howardphillipsSprite.SetActive(true);
-                    hasWon = true; // Устанавливаем флаг выигрыша
+                    hasWon = true;
                     break;
                 case "LONELY RAG-A-MUFFIN":
                     lonelyragamuffinSprite.SetActive(true);
-                    hasWon = true; // Устанавливаем флаг выигрыша
+                    hasWon = true;
                     break;
                 case "FLAPPER'S DELIGHT":
                     flappersdelightSprite.SetActive(true);
-                    hasWon = true; // Устанавливаем флаг выигрыша
+                    hasWon = true;
                     break;
                 default:
                     wrongCombinationSprite.SetActive(true);
                     break;
             }
 
-            // Отключаем кнопку смешивания, если игрок выиграл
             if (hasWon)
             {
-                mixButton.interactable = false; // Делаем кнопку недоступной
+                mixButton.interactable = false;
             }
         }
     }
