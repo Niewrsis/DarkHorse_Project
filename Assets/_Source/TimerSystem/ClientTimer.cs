@@ -48,6 +48,7 @@ namespace TimerSystem
         private void UpdateUI()
         {
             timerText.text = FormattingToTime(_currentTime);
+            TryGetFirstObj();
         }
 
         private string FormattingToTime(int time)
@@ -63,6 +64,18 @@ namespace TimerSystem
             orderSO.IsFirstGeneration = true;
             mindControll.DecreaseMind();
             UpdateUI();
+        }
+        private bool TryGetFirstObj()
+        {
+            if (FindFirstObjectByType<ClientManager>() == null)
+            {
+                return false;
+            }
+            else
+            {
+                clientManager = FindFirstObjectByType<ClientManager>();
+                return true;
+            }
         }
     }
 }

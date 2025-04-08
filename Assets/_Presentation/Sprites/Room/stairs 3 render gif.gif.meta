@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stairs 3 render gif_0: 8480612839786507738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

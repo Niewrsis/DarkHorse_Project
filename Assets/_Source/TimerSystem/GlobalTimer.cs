@@ -46,6 +46,7 @@ namespace TimerSystem
         private void UpdateUI()
         {
             timerText.text = FormattingToTime(_currentTime);
+            TryGetFirstObject();
         }
 
         private string FormattingToTime(int time)
@@ -58,6 +59,19 @@ namespace TimerSystem
         public void SelfDestruction()
         {
             Destroy(gameObject);
+        }
+        private bool TryGetFirstObject()
+        {
+            if (FindFirstObjectByType<DialogueTimer>() == null || FindFirstObjectByType<ClientManager>() == null)
+            {
+                return false;
+            }
+            else
+            {
+                dialogueTimer = FindFirstObjectByType<DialogueTimer>();
+                clientManager = FindFirstObjectByType<ClientManager>();
+                return true;
+            }
         }
     }
 }
