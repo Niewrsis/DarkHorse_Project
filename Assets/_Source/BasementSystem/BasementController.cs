@@ -25,7 +25,7 @@ namespace BasementSystem
             gifEnter2.SetActive(false);
             background.SetActive(false);
 
-            switch (indexTest)
+            switch (PlayerPrefs.GetInt(ConstVar.DAYS_PP))
             {
                 case 1:
                     {
@@ -34,6 +34,12 @@ namespace BasementSystem
                         break;
                     }
                 case 2:
+                    {
+                        gifEnter2.SetActive(true);
+                        StartCoroutine(EnterToBasement(gifEnter2, enter2Timing));
+                        break;
+                    }
+                default:
                     {
                         gifEnter2.SetActive(true);
                         StartCoroutine(EnterToBasement(gifEnter2, enter2Timing));

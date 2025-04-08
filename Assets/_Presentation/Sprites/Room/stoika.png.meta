@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stoika_0: -8986733844961682692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

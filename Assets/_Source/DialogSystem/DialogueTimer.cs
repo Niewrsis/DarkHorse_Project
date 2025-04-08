@@ -1,6 +1,6 @@
 using SceneSystem;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using TimerSystem;
 using UnityEngine;
 
@@ -9,7 +9,8 @@ namespace DialogSystem
 
     public class DialogueTimer : MonoBehaviour
     {
-        public DaySO DayToLoad;
+        public DaySO CurrentDay;
+        public List<DaySO> AllAvailableDays;
         public float Delay = 5f; // Time in seconds before the dialogue starts
 
         public Action OnTimerEnds;
@@ -29,13 +30,34 @@ namespace DialogSystem
 
         public void StartDialogue()
         {
-            if (DayToLoad != null)
+            Debug.Log(PlayerPrefs.GetInt(ConstVar.DAYS_PP));
+            switch (PlayerPrefs.GetInt(ConstVar.DAYS_PP))
             {
-                DialogueManager.Instance.StartDialogue(DayToLoad);
-            }
-            else
-            {
-                Debug.LogError("DaySO is not assigned on DialogueTimer!");
+                case 1:
+                    {
+                        DialogueManager.Instance.StartDialogue(AllAvailableDays[0]);
+                        break;
+                    }
+                case 2:
+                    {
+                        DialogueManager.Instance.StartDialogue(AllAvailableDays[1]);
+                        break;
+                    }
+                case 3:
+                    {
+                        DialogueManager.Instance.StartDialogue(AllAvailableDays[2]);
+                        break;
+                    }
+                case 4:
+                    {
+                        DialogueManager.Instance.StartDialogue(AllAvailableDays[3]);
+                        break;
+                    }
+                default:
+                    {
+                        Debug.Log("Error to load day");
+                        break;
+                    }
             }
         }
         public void SwitchSceneToBasement(int index)

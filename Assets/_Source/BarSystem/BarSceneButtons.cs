@@ -18,15 +18,15 @@ namespace BarSystem
         }
         private void CocktailButton()
         {
-            SceneChanger.ChangeScene(2);
+            SceneChanger.ChangeScene(ConstVar.COCKTAIL_SCREEN_INDEX);
         }
         private void BeerButton()
         {
-            SceneChanger.ChangeScene(3);
+            SceneChanger.ChangeScene(ConstVar.BEER_SCREEN_INDEX);
         }
         private void SaladButton()
         {
-            SceneChanger.ChangeScene(4);
+            SceneChanger.ChangeScene(ConstVar.SALAD_SCREEN_INDEX);
         }
     }
 }

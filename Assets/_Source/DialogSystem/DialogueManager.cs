@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TimerSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -117,7 +118,13 @@ namespace DialogSystem
             currentDay = null;
             currentDialogIndex = 0;
         }
+        public void IncreaseDay()
+        {
+            PlayerPrefs.SetInt(ConstVar.DAYS_PP, PlayerPrefs.GetInt(ConstVar.DAYS_PP) + 1);
+        }
+        public void DestroyGameObject()
+        {
+            FindFirstObjectByType<GlobalTimer>().SelfDestruction();
+        }
     }
-
-
 }

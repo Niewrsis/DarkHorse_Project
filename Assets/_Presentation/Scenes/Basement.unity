@@ -769,6 +769,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1678368356}
+        m_TargetAssemblyTypeName: DialogSystem.DialogueManager, Assembly-CSharp
+        m_MethodName: IncreaseDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1678368357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,7 +793,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf704f6c04311c44991a053f7eead9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DayToLoad: {fileID: 11400000, guid: f6487083b3d4f5f43891a7a5b8dc8a37, type: 2}
+  CurrentDay: {fileID: 0}
+  AllAvailableDays:
+  - {fileID: 11400000, guid: f6487083b3d4f5f43891a7a5b8dc8a37, type: 2}
+  - {fileID: 11400000, guid: a5696f966c40b2649aa0dd15e2e6e16b, type: 2}
+  - {fileID: 11400000, guid: 72eec1a31f6826b4a9eb99a313bb1b3c, type: 2}
+  - {fileID: 11400000, guid: e79a8afac65c6bb489007421f6c32c60, type: 2}
   Delay: 5
 --- !u!1 &1744577685
 GameObject:
