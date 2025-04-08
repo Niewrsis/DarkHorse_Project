@@ -28,7 +28,7 @@ namespace BasementSystem
             gifEnter3.SetActive(false);
             background.SetActive(false);
 
-            switch (/*PlayerPrefs.GetInt(ConstVar.DAYS_PP)*/ indexTest)
+            switch (PlayerPrefs.GetInt(ConstVar.DAYS_PP))
             {
                 case 1:
                     {
