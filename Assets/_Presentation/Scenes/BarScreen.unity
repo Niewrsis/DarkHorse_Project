@@ -2243,6 +2243,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 464723380}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5490184387440829568}
+        m_TargetAssemblyTypeName: TimerSystem.GlobalTimer, Assembly-CSharp
+        m_MethodName: SelfDestruction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 522299249}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDialogueEnd:
     m_PersistentCalls:
       m_Calls:
@@ -2282,13 +2318,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf704f6c04311c44991a053f7eead9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentDay: {fileID: 11400000, guid: b6e4aeb38cda5dd44bfd14cb0137e769, type: 2}
   AllAvailableDays:
   - {fileID: 11400000, guid: b6e4aeb38cda5dd44bfd14cb0137e769, type: 2}
   - {fileID: 11400000, guid: cc719525f185f71439bcceb6eb9634e3, type: 2}
   - {fileID: 11400000, guid: 44ece87b6a3b7ef4ead6a88270d76747, type: 2}
   - {fileID: 11400000, guid: 581f830f04f310f45afd336f7499bc00, type: 2}
-  Delay: 5
 --- !u!1 &1914422500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3085,6 +3119,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1568093882283726875, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
   m_PrefabInstance: {fileID: 5490184387440829566}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5490184387440829568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8910502800713672592, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
+  m_PrefabInstance: {fileID: 5490184387440829566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064017447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9b15fff77dd2b4a9cbea793186c662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
