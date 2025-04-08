@@ -17,6 +17,9 @@ namespace TimerSystem
         [SerializeField] private MindControll mindControll;
         [SerializeField] private ClientManager clientManager;
 
+        public Sprite CurrentSprite;
+        public bool IsNewClient;
+
         private void Start()
         {
             _currentTime = maximumTimeInSeconds;
@@ -26,6 +29,8 @@ namespace TimerSystem
 
         private IEnumerator StartTimer()
         {
+            IsNewClient = true;
+            clientManager.ChangeClient();
             while (_currentTime > 0)
             {
                 yield return new WaitForSeconds(1);
@@ -33,7 +38,6 @@ namespace TimerSystem
                 UpdateUI();
             }
             OnLose();
-            clientManager.ChangeClient();
             ResetTimer();
         }
 

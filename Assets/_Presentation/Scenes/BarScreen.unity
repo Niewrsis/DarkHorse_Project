@@ -893,6 +893,8 @@ MonoBehaviour:
   orderSO: {fileID: 11400000, guid: 3be72ce519522284583f163848c2ef2e, type: 2}
   mindControll: {fileID: 1064017459}
   clientManager: {fileID: 108658961}
+  CurrentSprite: {fileID: 0}
+  IsNewClient: 0
 --- !u!224 &1064017458 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4759173964949981738, guid: 9cf223ed0b2e4bf49838b0f0bb567750, type: 3}
