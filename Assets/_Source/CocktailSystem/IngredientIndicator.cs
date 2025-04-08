@@ -1,51 +1,39 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class IngredientIndicator : MonoBehaviour
+namespace CocktailSystem
 {
-    public GameObject ginSprite;
-    public GameObject whiskeySprite;
-    public GameObject rumSprite;
-    public GameObject iceSprite;
-
-    private Dictionary<string, GameObject> ingredientMap;
-    private string currentIngredient;
-
-    void Start()
+    public class SpriteManager : MonoBehaviour
     {
-        ingredientMap = new Dictionary<string, GameObject>
+        public Button ginButton;
+        public Button whiskeyButton;
+        public Button rumButton;
+        public Button iceButton;
+
+        public GameObject ginSprite;
+        public GameObject whiskeySprite;
+        public GameObject rumSprite;
+        public GameObject iceSprite;
+
+        private GameObject currentSprite;
+
+        void Start()
         {
-            { "Gin", ginSprite },
-            { "Whiskey", whiskeySprite },
-            { "Rum", rumSprite },
-            { "Ice", iceSprite }
-        };
-
-        ClearIndicators();
-    }
-
-    public void UpdateIndicators(string ingredient)
-    {
-        if (ingredient == currentIngredient) return;
-
-        if (!string.IsNullOrEmpty(currentIngredient) && ingredientMap.ContainsKey(currentIngredient))
-        {
-            ingredientMap[currentIngredient].SetActive(false);
+            ginButton.onClick.AddListener(() => ShowSprite(ginSprite));
+            whiskeyButton.onClick.AddListener(() => ShowSprite(whiskeySprite));
+            rumButton.onClick.AddListener(() => ShowSprite(rumSprite));
+            iceButton.onClick.AddListener(() => ShowSprite(iceSprite));
         }
 
-        if (ingredientMap.ContainsKey(ingredient))
+        void ShowSprite(GameObject spriteToShow)
         {
-            ingredientMap[ingredient].SetActive(true);
-            currentIngredient = ingredient;
-        }
-    }
+            if (currentSprite != null)
+            {
+                currentSprite.SetActive(false);
+            }
 
-    private void ClearIndicators()
-    {
-        foreach (var indicator in ingredientMap.Values)
-        {
-            indicator.SetActive(false);
+            currentSprite = spriteToShow;
+            currentSprite.SetActive(true);
         }
-        currentIngredient = null;
     }
 }

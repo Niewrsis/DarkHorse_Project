@@ -7,6 +7,6 @@ public class SceneSwitcher : MonoBehaviour
 
     public void GoToSpecifiedScene()
     {
-        SceneManager.LoadScene(sceneToGoBack);
+        SceneManager.LoadScene(ConstVar.BAR_SCREEN_INDEX);
     }
 }

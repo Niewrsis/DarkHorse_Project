@@ -19,7 +19,6 @@ namespace CocktailSystem
         public GameObject wrongCombinationSprite;
 
         public WinChecker winChecker;
-        public IngredientIndicator ingredientIndicator;
 
         private List<string> ingredients = new List<string>();
         private bool hasWon = false;
@@ -37,10 +36,8 @@ namespace CocktailSystem
         {
             if (!hasWon)
             {
-                ingredientIndicator.UpdateIndicators(ingredient);
-
-                ingredients.Clear();
                 ingredients.Add(ingredient);
+                Debug.Log("Добавлено: " + ingredient);
             }
         }
 
@@ -52,7 +49,6 @@ namespace CocktailSystem
             ShowResult(result);
             winChecker.CheckWin(result);
             ingredients.Clear();
-            ingredientIndicator.UpdateIndicators("");
         }
 
         string CheckRecipe(List<string> ingredients)

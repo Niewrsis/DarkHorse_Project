@@ -514,7 +514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &485124232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,6 +601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77f364774bc98c4e8de83e684a5b44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ginButton: {fileID: 1276628301}
+  whiskeyButton: {fileID: 2084111630}
+  rumButton: {fileID: 1874787613}
+  iceButton: {fileID: 866600672}
   ginSprite: {fileID: 972425314}
   whiskeySprite: {fileID: 1371032644}
   rumSprite: {fileID: 677031400}
@@ -728,7 +732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &677031401
 RectTransform:
   m_ObjectHideFlags: 0
@@ -923,7 +927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &972425315
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1591,7 +1595,6 @@ MonoBehaviour:
   flappersdelightSprite: {fileID: 1148090707}
   wrongCombinationSprite: {fileID: 1221700868}
   winChecker: {fileID: 147774747}
-  ingredientIndicator: {fileID: 517580965}
 --- !u!114 &1265669156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,7 +1820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1371032645
 RectTransform:
   m_ObjectHideFlags: 0
