@@ -869,7 +869,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1370472964
+--- !u!1 &1098250238
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -877,22 +877,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1370472966}
-  - component: {fileID: 1370472965}
+  - component: {fileID: 1098250240}
+  - component: {fileID: 1098250239}
   m_Layer: 0
-  m_Name: photo_2025-04-07_22-04-55_0
+  m_Name: basement render_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!212 &1370472965
+  m_IsActive: 1
+--- !u!212 &1098250239
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370472964}
+  m_GameObject: {fileID: 1098250238}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -930,28 +930,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -655347356912057434, guid: 15fdae5dc7ca41540b2349b539981096, type: 3}
+  m_Sprite: {fileID: -2286745318064211164, guid: d3b423ae46ab14f438071ba026885504, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.8, y: 7.4}
+  m_Size: {x: 25.6, y: 14.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1370472966
+--- !u!4 &1098250240
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370472964}
+  m_GameObject: {fileID: 1098250238}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 0.213, z: 0}
-  m_LocalScale: {x: 1.4579904, y: 1.4579904, z: 1.4579904}
+  m_LocalPosition: {x: 0.0002, y: -0.0188, z: 0}
+  m_LocalScale: {x: 0.6993044, y: 0.6993044, z: 0.6993044}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1137,7 +1137,7 @@ MonoBehaviour:
   gifEnter1: {fileID: 1744577685}
   gifEnter2: {fileID: 679153089}
   gifEnter3: {fileID: 277229826}
-  background: {fileID: 1370472964}
+  background: {fileID: 0}
   indexTest: 3
   events: {fileID: 1636070272}
 --- !u!114 &1636070272
@@ -1277,7 +1277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1744577686
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1693,7 +1693,7 @@ SceneRoots:
   - {fileID: 1744577687}
   - {fileID: 679153092}
   - {fileID: 277229829}
-  - {fileID: 1370472966}
+  - {fileID: 1098250240}
   - {fileID: 692563076}
   - {fileID: 896133750}
   - {fileID: 642071686}

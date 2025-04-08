@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 15fdae5dc7ca41540b2349b539981096
+guid: d3b423ae46ab14f438071ba026885504
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -655347356912057434
-    second: photo_2025-04-07_22-04-55_0
+      213: -2286745318064211164
+    second: basement render_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: photo_2025-04-07_22-04-55_0
+      name: basement render_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1280
-        height: 740
+        width: 2560
+        height: 1440
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a304c21d0db7e6f0800000000000000
-      internalID: -655347356912057434
+      spriteID: 42bbef8bf39d340e0800000000000000
+      internalID: -2286745318064211164
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      photo_2025-04-07_22-04-55_0: -655347356912057434
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
