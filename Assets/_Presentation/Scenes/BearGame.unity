@@ -585,7 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image1: {fileID: 311239033}
   image2: {fileID: 397829174}
-  sprite1: {fileID: 0}
+  sprite1: {fileID: 1902105534}
   sprite2: {fileID: 1816067284}
   victoryButton: {fileID: 1902105535}
   completionButton: {fileID: 754846602}
