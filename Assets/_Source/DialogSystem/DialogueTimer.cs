@@ -9,13 +9,8 @@ namespace DialogSystem
 
     public class DialogueTimer : MonoBehaviour
     {
-        public DaySO CurrentDay;
         public List<DaySO> AllAvailableDays;
-        public float Delay = 5f; // Time in seconds before the dialogue starts
-
         public Action OnTimerEnds;
-
-        private bool dialogueStarted = false;
 
         void Start()
         {
@@ -25,7 +20,6 @@ namespace DialogSystem
         private void StartDialogueAfterDelay()
         {
             StartDialogue();
-            dialogueStarted = true;
         }
 
         public void StartDialogue()

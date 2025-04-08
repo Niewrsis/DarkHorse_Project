@@ -8,7 +8,7 @@ namespace TimerSystem
     public class GlobalTimer : MonoBehaviour
     {
         [SerializeField] private int maximumTimeInSeconds;
-        [SerializeField] private DialogueTimer dialogueTimer;
+        private DialogueTimer dialogueTimer;
         [SerializeField] private ClientManager clientManager;
         private int _currentTime;
 
@@ -29,7 +29,10 @@ namespace TimerSystem
                 UpdateUI();
             }
         }
-
+        private void Start()
+        {
+            dialogueTimer = FindFirstObjectByType<DialogueTimer>();
+        }
         private IEnumerator StartTimer()
         {
             while (_currentTime > 0)

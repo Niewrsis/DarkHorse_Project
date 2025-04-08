@@ -34,7 +34,7 @@ namespace TimerSystem
             }
             OnLose();
             clientManager.ChangeClient();
-            StartCoroutine(StartTimer());
+            ResetTimer();
         }
 
         public void ResetTimer()
@@ -63,7 +63,6 @@ namespace TimerSystem
             orderSO.IsFirstGeneration = true;
             mindControll.DecreaseMind();
             UpdateUI();
-            SceneChanger.ChangeScene(1);
         }
     }
 }
