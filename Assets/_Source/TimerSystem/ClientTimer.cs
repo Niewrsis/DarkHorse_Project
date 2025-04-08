@@ -13,10 +13,10 @@ namespace TimerSystem
         private int _currentTime;
 
         [SerializeField] private TextMeshProUGUI timerText;
-
         [SerializeField] private OrderSO orderSO;
-
         [SerializeField] private MindControll mindControll;
+        [SerializeField] private ClientManager clientManager;
+
         private void Start()
         {
             _currentTime = maximumTimeInSeconds;
@@ -33,8 +33,10 @@ namespace TimerSystem
                 UpdateUI();
             }
             OnLose();
+            clientManager.ChangeClient();
             StartCoroutine(StartTimer());
         }
+
         public void ResetTimer()
         {
             StopCoroutine(StartTimer());
@@ -47,12 +49,14 @@ namespace TimerSystem
         {
             timerText.text = FormattingToTime(_currentTime);
         }
+
         private string FormattingToTime(int time)
         {
             int minutes = time / 60;
             int seconds = time % 60;
             return string.Format("{0:00}:{1:00}", minutes, seconds);
         }
+
         private void OnLose()
         {
             _currentTime = maximumTimeInSeconds;
