@@ -1133,10 +1133,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enter1Timing: 4.4
   enter2Timing: 7.2
+  enter3Timeing: 11.2
   gifEnter1: {fileID: 1744577685}
   gifEnter2: {fileID: 679153089}
+  gifEnter3: {fileID: 277229826}
   background: {fileID: 1370472964}
-  indexTest: 1
+  indexTest: 3
   events: {fileID: 1636070272}
 --- !u!114 &1636070272
 MonoBehaviour:

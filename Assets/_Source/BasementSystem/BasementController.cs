@@ -8,9 +8,11 @@ namespace BasementSystem
     {
         [SerializeField] private float enter1Timing;
         [SerializeField] private float enter2Timing;
+        [SerializeField] private float enter3Timeing;
 
         [SerializeField] private GameObject gifEnter1;
         [SerializeField] private GameObject gifEnter2;
+        [SerializeField] private GameObject gifEnter3;
 
         [SerializeField] private GameObject background;
 
@@ -23,9 +25,10 @@ namespace BasementSystem
         {
             gifEnter1.SetActive(false);
             gifEnter2.SetActive(false);
+            gifEnter3.SetActive(false);
             background.SetActive(false);
 
-            switch (PlayerPrefs.GetInt(ConstVar.DAYS_PP))
+            switch (/*PlayerPrefs.GetInt(ConstVar.DAYS_PP)*/ indexTest)
             {
                 case 1:
                     {
@@ -37,6 +40,12 @@ namespace BasementSystem
                     {
                         gifEnter2.SetActive(true);
                         StartCoroutine(EnterToBasement(gifEnter2, enter2Timing));
+                        break;
+                    }
+                case 3:
+                    {
+                        gifEnter3.SetActive(true);
+                        StartCoroutine(EnterToBasement(gifEnter3, enter3Timeing));
                         break;
                     }
                 default:
