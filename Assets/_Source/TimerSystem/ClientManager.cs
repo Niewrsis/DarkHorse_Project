@@ -23,7 +23,6 @@ public class ClientManager : MonoBehaviour
 
     public void ChangeClient()
     {
-        Debug.Log(_clientTimer.IsNewClient);
         if(_clientTimer.IsNewClient)
         {
             int randomIndex = Random.Range(0, clientSprites.Count);

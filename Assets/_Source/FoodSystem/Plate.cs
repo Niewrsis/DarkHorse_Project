@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace FoodSelection
 {
@@ -40,6 +41,7 @@ namespace FoodSelection
                 newFood.layer = LayerMask.NameToLayer("UI");
                 newFood.transform.localScale = Vector3.one;
                 _foodOnPlate.Add(draggableItem.foodName);
+                canvasGroup.blocksRaycasts = false;
                 gameManager.CheckWinCondition(_foodOnPlate);
             }
         }

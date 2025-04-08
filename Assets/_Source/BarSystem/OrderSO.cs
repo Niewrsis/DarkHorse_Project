@@ -41,7 +41,7 @@ namespace BarSystem
                         Beer.CompletedCount++;
                         break;
                     }
-                case OrderType.Salad:
+                case OrderType.Food:
                     {
                         Salad.CompletedCount++;
                         break;
@@ -97,7 +97,7 @@ namespace BarSystem
                             Beer.IsSpawnedAsFirst = true;
                             break;
                         }
-                    case OrderType.Salad:
+                    case OrderType.Food:
                         {
                             Salad.Count = slot.Count;
                             Salad.IsSpawnedAsFirst = true;
