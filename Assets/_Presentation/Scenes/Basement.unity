@@ -1049,6 +1049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FadingBackground
       objectReference: {fileID: 0}
+    - target: {fileID: 2114496089970218681, guid: 1bd7c14f95e37e8499b214bf0af8c2b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1703,11 +1707,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3611821385174117965, guid: ffe4920a526a9874b8a69c714c8661d5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 895.19
+      value: 1741.1736
       objectReference: {fileID: 0}
     - target: {fileID: 3611821385174117965, guid: ffe4920a526a9874b8a69c714c8661d5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 197.31
+      value: 364.0067
       objectReference: {fileID: 0}
     - target: {fileID: 3611821385174117965, guid: ffe4920a526a9874b8a69c714c8661d5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1743,7 +1747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3611821385174117965, guid: ffe4920a526a9874b8a69c714c8661d5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -298
+      value: -281.47998
       objectReference: {fileID: 0}
     - target: {fileID: 3611821385174117965, guid: ffe4920a526a9874b8a69c714c8661d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1764,6 +1768,14 @@ PrefabInstance:
     - target: {fileID: 5616281897522224988, guid: ffe4920a526a9874b8a69c714c8661d5, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178487115672350239, guid: ffe4920a526a9874b8a69c714c8661d5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -280
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178487115672350239, guid: ffe4920a526a9874b8a69c714c8661d5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 146
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
