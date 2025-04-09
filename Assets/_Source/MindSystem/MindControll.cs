@@ -46,9 +46,7 @@ namespace MindSystem
         }
         private void OnLose()
         {
-            button.gameObject.SetActive(true);
-            Time.timeScale = 0f;
-            button.onClick.AddListener(() => { SceneManager.LoadScene(0); Time.timeScale = 1f;  Destroy(gameObject); });
+            SceneManager.LoadScene(6); // Загружаем сцену 6
         }
         private void UpdateUI()
         {
