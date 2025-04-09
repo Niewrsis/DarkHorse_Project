@@ -1,5 +1,6 @@
 using SceneSystem;
 using System;
+using System.Collections;
 using TimerSystem;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,9 @@ namespace MindSystem
         [SerializeField] private TextMeshProUGUI mindText;
 
         private int _currentMind;
+
+        public Image loseImage;
+        public GameObject otherGameObject;
 
         [SerializeField] private int increasingInPercent;
         [SerializeField] private int decreasingPercent;
@@ -46,7 +50,15 @@ namespace MindSystem
         }
         private void OnLose()
         {
-            SceneManager.LoadScene(6); // Загружаем сцену 6
+            otherGameObject.gameObject.SetActive(false);
+            loseImage.gameObject.SetActive(true);
+            StartCoroutine(WaitAndLoadScene(5f));
+        }
+
+        private IEnumerator WaitAndLoadScene(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            SceneManager.LoadScene(6);
         }
         private void UpdateUI()
         {
