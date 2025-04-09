@@ -49,7 +49,7 @@ namespace FoodSelection
 
         private void UpdateTaskText()
         {
-            string task = "\n";
+            string task = "";
             foreach (FoodGoal goal in winConditions)
             {
                 if(goal.requiredAmount != 0)
