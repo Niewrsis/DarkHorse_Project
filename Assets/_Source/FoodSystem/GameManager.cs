@@ -2,21 +2,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using TMPro; // Обязательно добавьте этот using для TextMeshPro
+using TMPro;
+using System;
 
 namespace FoodSelection
 {
     public class GameManager : MonoBehaviour
     {
-        public FoodGoal[] winConditions; // Массив условий для победы
-        public Image winIndicator; // Галочка, которую нужно активировать при победе
-        public Plate plate; // Ссылка на скрипт Plate
-        public TextMeshProUGUI taskText; // Ссылка на TextMeshPro UI элемент
+        public List<FoodGoal> winConditions;
+        public Image winIndicator;
+        public Plate plate;
+        public TextMeshProUGUI taskText;
+
+        private System.Random _rnd = new System.Random();
 
         void Start()
         {
-            winIndicator.gameObject.SetActive(false); // Скрываем галочку в начале
-            UpdateTaskText(); // Обновляем текст задания при старте игры
+
+            winConditions = new List<FoodGoal>();
+
+            FoodGoal food = new FoodGoal();
+            FoodGoal food1 = new FoodGoal();
+            FoodGoal food2 = new FoodGoal();
+            FoodGoal food3 = new FoodGoal();
+
+            food.foodName = FoodType.Salad;
+            food.requiredAmount = _rnd.Next(1, 4);
+            winConditions.Add(food);
+
+            food1.foodName = FoodType.Tomato;
+            food1.requiredAmount = _rnd.Next(0, 4);
+            winConditions.Add(food1);
+
+            food2.foodName = FoodType.Cheese;
+            food2.requiredAmount = _rnd.Next(0, 4);
+            winConditions.Add(food2);
+
+            food3.foodName = FoodType.Chicken;
+            food3.requiredAmount = _rnd.Next(0, 4);
+            winConditions.Add(food3);
+
+                
+            winIndicator.gameObject.SetActive(false);
+            UpdateTaskText();
         }
 
         private void UpdateTaskText()
@@ -24,49 +52,42 @@ namespace FoodSelection
             string task = "\n";
             foreach (FoodGoal goal in winConditions)
             {
-                task += $"{goal.requiredAmount} {goal.foodName}\n";
+                if(goal.requiredAmount != 0)
+                {
+                    task += $"{goal.requiredAmount} {Enum.GetName(typeof(FoodType), goal.foodName)}\n";
+                }
             }
             taskText.text = task;
         }
 
-        public void CheckWinCondition(List<string> foodOnPlate)
+        public void CheckWinCondition(List<FoodGoal> foodOnPlate)
         {
-            bool win = true;
+            var groupedFood = foodOnPlate.GroupBy(x => x.foodName)
+                .Select(group => new { FoodType = group.Key, Count = group.Count() })
+                .ToDictionary(x => x.FoodType, x => x.Count);
 
-            // 1. Проверка, что все необходимые ингредиенты присутствуют в нужном количестве.
-            foreach (FoodGoal goal in winConditions)
+            List<FoodGoal> list = new List<FoodGoal>();
+
+            foreach (FoodGoal winCondition in winConditions)
             {
-                int count = foodOnPlate.Count(food => food == goal.foodName); // Используем Linq для подсчета
-                if (count != goal.requiredAmount) // Строгое соответствие
+                FoodGoal food = new FoodGoal();
+                food.foodName = winCondition.foodName;
+
+                if (groupedFood.ContainsKey(winCondition.foodName))
                 {
-                    win = false;
-                    break;
+                    food.requiredAmount = groupedFood[winCondition.foodName];
                 }
+                else
+                {
+                    food.requiredAmount = 0;
+                }
+                list.Add(food);
             }
 
-            // 2. Проверка на наличие лишних ингредиентов.
-            if (win) // Если предыдущая проверка прошла успешно
-            {
-                // Создаем список ожидаемых ингредиентов
-                List<string> expectedFood = new List<string>();
-                foreach (FoodGoal goal in winConditions)
-                {
-                    for (int i = 0; i < goal.requiredAmount; i++)
-                    {
-                        expectedFood.Add(goal.foodName);
-                    }
-                }
+            winConditions.Sort();
+            list.Sort();
 
-                // Сортируем оба списка для корректного сравнения
-                foodOnPlate.Sort();
-                expectedFood.Sort();
-
-                // Сравниваем списки
-                if (!foodOnPlate.SequenceEqual(expectedFood)) // Используем Linq для сравнения последовательностей
-                {
-                    win = false; // Если есть разница в списках (лишние ингредиенты), победа не засчитывается
-                }
-            }
+            bool win = winConditions.SequenceEqual(list);
 
             winIndicator.gameObject.SetActive(win);
         }

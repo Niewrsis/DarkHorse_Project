@@ -182,7 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &5240719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &32203565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,7 +481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &121843957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,7 +720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Salad
+  foodName:
+    foodName: 0
+    requiredAmount: 0
 --- !u!114 &177088719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +824,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Cheese
+  foodName:
+    foodName: 3
+    requiredAmount: 0
 --- !u!114 &289809754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,7 +928,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Cheese
+  foodName:
+    foodName: 3
+    requiredAmount: 0
 --- !u!114 &296333681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,7 +1032,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Cheese
+  foodName:
+    foodName: 3
+    requiredAmount: 0
 --- !u!114 &403200521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,7 +1223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Cheese
+  foodName:
+    foodName: 3
+    requiredAmount: 0
 --- !u!114 &435752027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,7 +1327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &450969517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,7 +1431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &477028549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1515,7 +1535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &504731652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1836,7 +1858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Chiken
+  foodName:
+    foodName: 2
+    requiredAmount: 0
 --- !u!114 &758765866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1938,7 +1962,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Chiken
+  foodName:
+    foodName: 2
+    requiredAmount: 0
 --- !u!114 &821105007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2040,7 +2066,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Cheese
+  foodName:
+    foodName: 3
+    requiredAmount: 0
 --- !u!114 &828722822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2267,7 +2295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Cheese
+  foodName:
+    foodName: 3
+    requiredAmount: 0
 --- !u!114 &880697997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2381,7 +2411,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Salad
+  foodName:
+    foodName: 0
+    requiredAmount: 0
 --- !u!114 &946435078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2471,7 +2503,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Salad
+  foodName:
+    foodName: 0
+    requiredAmount: 0
 --- !u!114 &976757519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2652,7 +2686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Chiken
+  foodName:
+    foodName: 2
+    requiredAmount: 0
 --- !u!114 &1070772556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2766,7 +2802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Chiken
+  foodName:
+    foodName: 2
+    requiredAmount: 0
 --- !u!114 &1137424919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2955,7 +2993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Salad
+  foodName:
+    foodName: 0
+    requiredAmount: 0
 --- !u!114 &1206206255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3144,7 +3184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &1261111603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3246,7 +3288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Chiken
+  foodName:
+    foodName: 2
+    requiredAmount: 0
 --- !u!114 &1271050412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3348,7 +3392,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &1323602016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3438,7 +3484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &1324321543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3533,13 +3581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904bebbb54ea0cd4a9e42ed1e2d4509a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winConditions:
-  - foodName: Chiken
-    requiredAmount: 1
-  - foodName: Salad
-    requiredAmount: 1
-  - foodName: Tomato
-    requiredAmount: 2
+  winConditions: []
   winIndicator: {fileID: 596323336}
   plate: {fileID: 118081500}
   taskText: {fileID: 1521041540}
@@ -3777,7 +3819,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &1561692324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3879,7 +3923,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &1567351394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4152,7 +4198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Salad
+  foodName:
+    foodName: 0
+    requiredAmount: 0
 --- !u!114 &1628284103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4662,7 +4710,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f622e37b4339a64aa7979258150d009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Tomato
+  foodName:
+    foodName: 1
+    requiredAmount: 0
 --- !u!114 &1994586165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4778,10 +4828,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 4661468397182194887}
+  - {fileID: 1466887388}
   - {fileID: 834988804}
   - {fileID: 147700633}
   - {fileID: 1007235894}
-  - {fileID: 1466887388}
   - {fileID: 1184477690}
   - {fileID: 1583121135}
   - {fileID: 1224776028}

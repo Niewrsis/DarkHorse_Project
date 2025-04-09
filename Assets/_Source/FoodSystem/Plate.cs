@@ -11,7 +11,7 @@ namespace FoodSelection
 
         public Transform foodContainer; // Transform для размещения объектов еды на тарелке.
 
-        private List<string> _foodOnPlate = new List<string>(); // Список еды на тарелке
+        private List<FoodGoal> _foodOnPlate = new List<FoodGoal>(); // Список еды на тарелке
 
         public void OnDrop(PointerEventData eventData)
         {
