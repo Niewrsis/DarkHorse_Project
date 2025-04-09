@@ -66,7 +66,14 @@ namespace DialogSystem
             yield return new WaitForSeconds(5);
             FindFirstObjectByType<Fade>().FadeIn();
             yield return new WaitForSeconds(2);
-            SceneChanger.ChangeScene(index);
+            if (PlayerPrefs.GetInt(ConstVar.DAYS_PP) == 5)
+            {
+                SceneChanger.ChangeScene(0);
+            }
+            else
+            {
+                SceneChanger.ChangeScene(index);
+            }
         }
         private void OnDisable()
         {
