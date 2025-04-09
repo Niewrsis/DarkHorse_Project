@@ -10,7 +10,7 @@ namespace FoodSelection
         private CanvasGroup _canvasGroup;
         private Vector3 _startPosition;
 
-        public string foodName; // Название продукта (например, "Курица")
+        public FoodGoal foodName;
 
         void Awake()
         {
