@@ -1,7 +1,10 @@
+using FadeSystem;
 using SceneSystem;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TimerSystem;
+using UnityEditor;
 using UnityEngine;
 
 namespace DialogSystem
@@ -56,7 +59,13 @@ namespace DialogSystem
         }
         public void SwitchSceneToBasement(int index)
         {
-            Destroy(FindFirstObjectByType<GlobalTimer>());
+            StartCoroutine(Switch(index));
+        }
+        private IEnumerator Switch(int index)
+        {
+            yield return new WaitForSeconds(5);
+            FindFirstObjectByType<Fade>().FadeIn();
+            yield return new WaitForSeconds(2);
             SceneChanger.ChangeScene(index);
         }
         private void OnDisable()

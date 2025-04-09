@@ -19,15 +19,5 @@ namespace BasementSystem
         {
             dialogue.StartDialogue();
         }
-        public void DoTweenBlackScreen(Image image)
-        {
-            StartCoroutine(Cor(image));
-        }
-        private IEnumerator Cor(Image image)
-        {
-            image.DOFade(1, 2f);
-            yield return new WaitForSeconds(2f);
-            dialogue.SwitchSceneToBasement(1);
-        }
     }
 }
