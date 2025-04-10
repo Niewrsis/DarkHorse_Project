@@ -68,7 +68,7 @@ namespace DialogSystem
             yield return new WaitForSeconds(2);
             if (PlayerPrefs.GetInt(ConstVar.DAYS_PP) == 5)
             {
-                SceneChanger.ChangeScene(0);
+                SceneChanger.ChangeScene(6);
             }
             else
             {
