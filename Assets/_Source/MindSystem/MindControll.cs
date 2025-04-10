@@ -1,6 +1,5 @@
 using SceneSystem;
 using System;
-using System.Collections;
 using TimerSystem;
 using TMPro;
 using UnityEngine;
@@ -12,11 +11,10 @@ namespace MindSystem
     public class MindControll : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI mindText;
+        [SerializeField] private GameObject losePanel;
+        [SerializeField] private Button restartButton;
 
         private int _currentMind;
-
-        public Image loseImage;
-        public GameObject otherGameObject;
 
         [SerializeField] private int increasingInPercent;
         [SerializeField] private int decreasingPercent;
@@ -27,39 +25,42 @@ namespace MindSystem
         private void Start()
         {
             _currentMind = 100;
+            restartButton.onClick.AddListener(RestartGame);
+            losePanel.SetActive(false);
         }
+
         public void IncreaseMind()
         {
             _currentMind += increasingInPercent;
-            if(_currentMind > 100)
+            if (_currentMind > 100)
             {
                 _currentMind = 100;
             }
             FindAnyObjectByType<ClientTimer>().ResetTimer();
             UpdateUI();
         }
+
         public void DecreaseMind()
         {
             _currentMind -= decreasingPercent;
-            if( _currentMind <= 0)
+            if (_currentMind <= 0)
             {
                 _currentMind = 0;
                 OnLose();
             }
             UpdateUI();
         }
+
         private void OnLose()
         {
-            otherGameObject.gameObject.SetActive(false);
-            loseImage.gameObject.SetActive(true);
-            StartCoroutine(WaitAndLoadScene(5f));
+            losePanel.SetActive(true);
         }
 
-        private IEnumerator WaitAndLoadScene(float waitTime)
+        private void RestartGame()
         {
-            yield return new WaitForSeconds(waitTime);
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(0);
         }
+
         private void UpdateUI()
         {
             mindText.text = _currentMind + "%";
