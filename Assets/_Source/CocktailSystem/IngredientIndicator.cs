@@ -9,6 +9,7 @@ namespace CocktailSystem
         public Button whiskeyButton;
         public Button rumButton;
         public Button iceButton;
+        public Button mixButton;
 
         public GameObject ginSprite;
         public GameObject whiskeySprite;
@@ -16,6 +17,7 @@ namespace CocktailSystem
         public GameObject iceSprite;
 
         private GameObject currentSprite;
+        private GameObject lastSprite;
 
         void Start()
         {
@@ -23,17 +25,38 @@ namespace CocktailSystem
             whiskeyButton.onClick.AddListener(() => ShowSprite(whiskeySprite));
             rumButton.onClick.AddListener(() => ShowSprite(rumSprite));
             iceButton.onClick.AddListener(() => ShowSprite(iceSprite));
+            mixButton.onClick.AddListener(HideAllSprites);
         }
 
         void ShowSprite(GameObject spriteToShow)
         {
             if (currentSprite != null)
             {
+                lastSprite = currentSprite;
                 currentSprite.SetActive(false);
             }
 
             currentSprite = spriteToShow;
             currentSprite.SetActive(true);
+        }
+
+        void HideAllSprites()
+        {
+            ginSprite.SetActive(false);
+            whiskeySprite.SetActive(false);
+            rumSprite.SetActive(false);
+            iceSprite.SetActive(false);
+
+            if (lastSprite == iceSprite)
+            {
+                if (currentSprite != null && currentSprite != iceSprite)
+                {
+                    currentSprite.SetActive(true);
+                }
+            }
+
+            currentSprite = null;
+            lastSprite = null;
         }
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e8426fb6eae3d604bbfa5ebd9a8f8fff
+guid: 35e1bcef18a74a94691d6e667db83a80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3699333385667941701
-    second: glass_W_0
+      213: 914349728113382571
+    second: glass_whiskey_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glass_W_0
+      name: glass_whiskey_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 198
-        height: 226
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bbae489b2e359acc0800000000000000
-      internalID: -3699333385667941701
+      spriteID: ba45ca8bb3c60bc00800000000000000
+      internalID: 914349728113382571
       vertices: []
       indices: 
       edges: []

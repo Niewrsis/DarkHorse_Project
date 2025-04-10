@@ -11,6 +11,7 @@ namespace CocktailSystem
         public Button rumButton;
         public Button iceButton;
         public Button mixButton;
+        public Button resetButton;
 
         public GameObject torpedoSprite;
         public GameObject howardphillipsSprite;
@@ -30,6 +31,7 @@ namespace CocktailSystem
             rumButton.onClick.AddListener(() => AddIngredient("Rum"));
             iceButton.onClick.AddListener(() => AddIngredient("Ice"));
             mixButton.onClick.AddListener(MixDrinks);
+            resetButton.onClick.AddListener(ResetGame);
         }
 
         void AddIngredient(string ingredient)
@@ -110,6 +112,18 @@ namespace CocktailSystem
             {
                 mixButton.interactable = false;
             }
+        }
+
+        void ResetGame()
+        {
+            ingredients.Clear();
+            hasWon = false;
+            mixButton.interactable = true;
+            torpedoSprite.SetActive(false);
+            howardphillipsSprite.SetActive(false);
+            lonelyragamuffinSprite.SetActive(false);
+            flappersdelightSprite.SetActive(false);
+            wrongCombinationSprite.SetActive(false);
         }
     }
 }
