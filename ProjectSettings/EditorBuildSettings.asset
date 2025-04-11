@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/_Presentation/Scenes/Basement.unity
     guid: e5fb205945837b94db4b8608380c120a
   - enabled: 1
+    path: Assets/_Presentation/Scenes/AnimationScene.unity
+    guid: 493ea142552235b4ea1bddd5bb073189
+  - enabled: 1
     path: Assets/_Presentation/Scenes/Defeat.unity
     guid: 23921ced19bdf8c43816e293fc2fa2d6
   m_configObjects:
