@@ -1261,9 +1261,9 @@ MonoBehaviour:
   enter1Timing: 4.4
   enter2Timing: 7.2
   enter3Timeing: 11.2
-  gifEnter1: {fileID: 0}
-  gifEnter2: {fileID: 0}
-  gifEnter3: {fileID: 0}
+  gifEnter1: {fileID: 1169856830}
+  gifEnter2: {fileID: 1741919940}
+  gifEnter3: {fileID: 579682901}
   background: {fileID: 1098250238}
   indexTest: 3
   events: {fileID: 1636070272}
