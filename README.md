@@ -1,7 +1,7 @@
 ## Project settings
 ```
 Unity version - 6000.0.43f1
-Render pipline - Built-in
+Render pipline - URP
 ```
 
 ## Folding DarkHorse Ludum Dare
